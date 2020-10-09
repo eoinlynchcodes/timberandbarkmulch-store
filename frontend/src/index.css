@@ -16,7 +16,7 @@ button {
 #root {
   height: 100%;
 }
-.grid-container {
+/* .grid-container {
   display: grid;
   grid-template-areas:
     'header'
@@ -25,15 +25,15 @@ button {
   grid-template-columns: 1fr;
   grid-template-rows: 5rem 1fr 5rem;
   height: 100%;
-}
+} */
 .header {
   grid-area: header;
-  background-color: #203040;
+  background-color: #56c55d;
   color: #ffffff;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem;
+  padding: 5rem;
 }
 .brand a {
   color: #ffffff;
@@ -462,4 +462,16 @@ tbody > tr:nth-child(odd) {
 
 .categories a:hover {
   background-color: #c0c0c0;
+}
+
+
+/* By Eoin */
+
+.containerByEoin{
+  height: 1fr;
+}
+
+.firewoodSection{
+  height: 15rem;
+  overflow: hidden;
 }

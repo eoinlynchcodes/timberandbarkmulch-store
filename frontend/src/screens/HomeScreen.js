@@ -4,6 +4,8 @@ import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
 import { listProducts } from '../actions/productActions';
 import Rating from '../components/Rating';
+import firewoodstack from '../imagesByEoin/firewoodstack.jpeg';
+import Navigation from './Navigation';
 
 function HomeScreen(props) {
   const [searchKeyword, setSearchKeyword] = useState('');
@@ -31,9 +33,13 @@ function HomeScreen(props) {
 
   return (
     <>
-      {category && <h2>{category}</h2>}
+    <Navigation/>
+    <div className="firewoodSection">
+    <img  src={firewoodstack}/>
+    </div>
+      {/* {category && <h2>{category}</h2>} */}
 
-      <ul className="filter">
+      {/* <ul className="filter">
         <li>
           <form onSubmit={submitHandler}>
             <input
@@ -51,7 +57,7 @@ function HomeScreen(props) {
             <option value="highest">Highest</option>
           </select>
         </li>
-      </ul>
+      </ul> */}
       {loading ? (
         <div>Loading...</div>
       ) : error ? (
