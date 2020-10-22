@@ -13,7 +13,7 @@ function ProductsScreen(props) {
   const [name, setName] = useState('');
   const [price, setPrice] = useState('');
   const [image, setImage] = useState('');
-  const [brand, setBrand] = useState('');
+  const [weightOrDimensions, setweightOrDimensions] = useState('');
   const [category, setCategory] = useState('');
   const [countInStock, setCountInStock] = useState('');
   const [description, setDescription] = useState('');
@@ -53,7 +53,7 @@ function ProductsScreen(props) {
     setPrice(product.price);
     setDescription(product.description);
     setImage(product.image);
-    setBrand(product.brand);
+    setweightOrDimensions(product.weightOrDimensions);
     setCategory(product.category);
     setCountInStock(product.countInStock);
   };
@@ -65,7 +65,7 @@ function ProductsScreen(props) {
         name,
         price,
         image,
-        brand,
+        weightOrDimensions,
         category,
         countInStock,
         description,
@@ -148,17 +148,17 @@ function ProductsScreen(props) {
                 {uploading && <div>Uploading...</div>}
               </li>
               <li>
-                <label htmlFor="brand">Brand</label>
+                <label htmlFor="weightOrDimensions">Weight / Other Dimensions</label>
                 <input
                   type="text"
-                  name="brand"
-                  value={brand}
-                  id="brand"
-                  onChange={(e) => setBrand(e.target.value)}
+                  name="weightOrDimensions"
+                  value={weightOrDimensions}
+                  id="weightOrDimensions"
+                  onChange={(e) => setweightOrDimensions(e.target.value)}
                 ></input>
               </li>
               <li>
-                <label htmlFor="countInStock">CountInStock</label>
+                <label htmlFor="countInStock">Count in Stock</label>
                 <input
                   type="text"
                   name="countInStock"
@@ -181,6 +181,7 @@ function ProductsScreen(props) {
                 <label htmlFor="description">Description</label>
                 <textarea
                   name="description"
+                  rows="6"
                   value={description}
                   id="description"
                   onChange={(e) => setDescription(e.target.value)}
@@ -213,7 +214,7 @@ function ProductsScreen(props) {
               <th>Name</th>
               <th>Price</th>
               <th>Category</th>
-              <th>Brand</th>
+              <th>Weight or Other Dimensions</th>
               <th>Action</th>
             </tr>
           </thead>
@@ -224,7 +225,7 @@ function ProductsScreen(props) {
                 <td>{product.name}</td>
                 <td>{product.price}</td>
                 <td>{product.category}</td>
-                <td>{product.brand}</td>
+                <td>{product.weightOrDimensions}</td>
                 <td>
                   <button className="button" onClick={() => openModal(product)}>
                     Edit

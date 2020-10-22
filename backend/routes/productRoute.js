@@ -43,9 +43,7 @@ router.post('/:id/reviews', isAuth, async (req, res) => {
     };
     product.reviews.push(review);
     product.numReviews = product.reviews.length;
-    product.rating =
-      product.reviews.reduce((a, c) => c.rating + a, 0) /
-      product.reviews.length;
+    product.rating = product.reviews.reduce((a, c) => c.rating + a, 0) / product.reviews.length;
     const updatedProduct = await product.save();
     res.status(201).send({
       data: updatedProduct.reviews[updatedProduct.reviews.length - 1],
@@ -62,7 +60,7 @@ router.put('/:id', isAuth, isAdmin, async (req, res) => {
     product.name = req.body.name;
     product.price = req.body.price;
     product.image = req.body.image;
-    product.brand = req.body.brand;
+    product.weightOrDimensions = req.body.weightOrDimensions;
     product.category = req.body.category;
     product.countInStock = req.body.countInStock;
     product.description = req.body.description;
@@ -91,7 +89,7 @@ router.post('/', isAuth, isAdmin, async (req, res) => {
     name: req.body.name,
     price: req.body.price,
     image: req.body.image,
-    brand: req.body.brand,
+    weightOrDimensions: req.body.weightOrDimensions,
     category: req.body.category,
     countInStock: req.body.countInStock,
     description: req.body.description,
