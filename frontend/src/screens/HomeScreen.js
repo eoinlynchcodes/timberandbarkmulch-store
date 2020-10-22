@@ -7,6 +7,7 @@ import Rating from "../components/Rating";
 import firewoodstack from "../imagesByEoin/firewoodstack.jpeg";
 import Navigation from "./Navigation";
 import VideoAndDesc from "../screensByEoin/VideoAndDesc";
+import Footer from '../screensByEoin/Footer';
 
 function HomeScreen(props) {
   const [searchKeyword, setSearchKeyword] = useState("");
@@ -138,6 +139,7 @@ function HomeScreen(props) {
           </p>
         </div>
       </div>
+      <Footer/>
     </>
   );
 }
