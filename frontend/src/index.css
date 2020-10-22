@@ -468,6 +468,8 @@ tbody > tr:nth-child(odd) {
 /* By Eoin */
 
 .containerByEoin{
+  width: 80%;
+  margin: 0 auto;
 }
 
 .firewoodSection{

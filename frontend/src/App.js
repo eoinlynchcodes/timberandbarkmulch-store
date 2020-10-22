@@ -28,7 +28,7 @@ function App() {
   return (
     <BrowserRouter>
       {/* <div className="grid-container"> */}
-      <div className="containerByEoin">
+      <div>
 
         <main className="main">
           <div className="content">
