@@ -1,5 +1,26 @@
 .videoAndDescription{
     height: 50rem;
     display: flex;
+}
 
+.left33{
+    width: 40%;
+    background-color: #333333;
+    color: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right66{
+    width: 60%;
+}
+
+.contactForm{
+    display: flex;
+    flex-direction: column;
+}
+
+.footerByEoin{
+    
 }

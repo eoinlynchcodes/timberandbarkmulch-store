@@ -2,8 +2,7 @@ import React from "react";
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 import '../App.css';
 import { useSelector } from 'react-redux';
-
-
+import shoppingcart from '../imagesByEoin/shopping-cart.png';
 
 function Navigation(props) {
 

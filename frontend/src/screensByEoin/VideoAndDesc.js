@@ -4,9 +4,9 @@ import './byEoin.css';
 function VideoAndDesc() {
   return (
     <div className="videoAndDescription">
-      <div>Firewood. Delivered.</div>
+      <div className="left33"><h1>Firewood, delivered...</h1></div>
 
-      <div>
+      <div className="right66">
         <h2>Video will go here of the stove.</h2>
       </div>
     </div>

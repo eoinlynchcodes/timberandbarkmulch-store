@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { detailsProduct, saveProductReview } from '../actions/productActions';
 import Rating from '../components/Rating';
 import { PRODUCT_REVIEW_SAVE_RESET } from '../constants/productConstants';
+import Navigation from '../screensByEoin/Navigation';
 
 function ProductScreen(props) {
   const [qty, setQty] = useState(1);
@@ -45,7 +46,8 @@ function ProductScreen(props) {
   };
 
   return (
-    <div>
+    <div>        
+      <Navigation/>
       <div className="back-to-result">
         <Link to="/">Back to result</Link>
       </div>
@@ -73,7 +75,7 @@ function ProductScreen(props) {
                   </a>
                 </li>
                 <li>
-                  Price: <b>${product.price}</b>
+                  Price: <b>€{product.price}</b>
                 </li>
                 <li>
                   Description:
@@ -116,7 +118,7 @@ function ProductScreen(props) {
               </ul>
             </div>
           </div>
-          <div className="content-margined">
+          {/* <div className="content-margined">
             <h2>Reviews</h2>
             {!product.reviews.length && <div>There is no review</div>}
             <ul className="review" id="reviews">
@@ -172,7 +174,7 @@ function ProductScreen(props) {
                 )}
               </li>
             </ul>
-          </div>
+          </div> */}
         </>
       )}
     </div>
