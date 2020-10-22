@@ -468,10 +468,13 @@ tbody > tr:nth-child(odd) {
 /* By Eoin */
 
 .containerByEoin{
-  height: 1fr;
 }
 
 .firewoodSection{
   height: 15rem;
   overflow: hidden;
+}
+
+.firewoodSection img {
+  width: 100%;
 }
