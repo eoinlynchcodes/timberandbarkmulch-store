@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { listProducts } from "../actions/productActions";
 import Rating from "../components/Rating";
 import firewoodstack from "../imagesByEoin/firewoodstack.jpeg";
-import Navigation from "./Navigation";
+import Navigation from "../screensByEoin/Navigation";
 import VideoAndDesc from "../screensByEoin/VideoAndDesc";
 import Footer from '../screensByEoin/Footer';
 

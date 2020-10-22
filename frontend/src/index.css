@@ -27,28 +27,16 @@ button {
   height: 100%;
 } */
 .header {
-  grid-area: header;
+  /* width: 100%;
+  grid-area: header; */
   background-color: #56c55d;
   color: #ffffff;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5rem;
+  padding: 5rem 0rem;
 }
-.brand a {
-  color: #ffffff;
-  font-size: 3rem;
-  font-weight: bold;
-  text-decoration: none;
-}
-.header-links a {
-  color: #ffffff;
-  text-decoration: none;
-  padding: 1rem;
-}
-.header-links a:hover {
-  color: #ff8000;
-}
+
 .main {
   grid-area: main;
 }

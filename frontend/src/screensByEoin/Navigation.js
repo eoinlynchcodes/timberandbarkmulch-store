@@ -5,10 +5,13 @@ import { useSelector } from 'react-redux';
 
 
 
-function Navigation() {
+function Navigation(props) {
 
     const userSignin = useSelector((state) => state.userSignin);
     const { userInfo } = userSignin;
+
+    const cart = useSelector(state => state.cart);
+    const { cartItems } = cart;
   
     const openMenu = () => {
       document.querySelector('.sidebar').classList.add('open');
@@ -20,14 +23,10 @@ function Navigation() {
   return (
     <div>
       <header className="header">
-        <div className="brand">
           <button onClick={openMenu}>&#9776;</button>
           <Link to="/">timberandbarkmulch.ie</Link>
-        </div>
-        <div className="header-links">
-          <a href="cart.html">Cart</a>
           {userInfo ? (
-            <Link to="/profile">{userInfo.name}</Link>
+            <Link to="/profile">Welcome {userInfo.name}</Link>
           ) : (
             <Link to="/signin">Sign In</Link>
           )}
@@ -42,8 +41,9 @@ function Navigation() {
               </ul>
             </div>
           )}
-        </div>
+            <a href="/cart/:id?">Cart {cart.cartItems.length} </a>
       </header>
+
       <aside className="sidebar">
         <h3>Shopping Categories</h3>
         <button className="sidebar-close-button" onClick={closeMenu}>
