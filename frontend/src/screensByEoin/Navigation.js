@@ -26,9 +26,7 @@ function Navigation(props) {
           <Link to="/">timberandbarkmulch.ie</Link>
           {userInfo ? (
             <Link to="/profile">Welcome {userInfo.name}</Link>
-          ) : (
-            <Link to="/signin">Sign In</Link>
-          )}
+          ): null } 
           {userInfo && userInfo.isAdmin && (
             <div className="dropdown">
               <a href="#">Admin</a>
