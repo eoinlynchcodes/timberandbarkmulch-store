@@ -7,7 +7,7 @@ import Rating from "../components/Rating";
 import firewoodstack from "../imagesByEoin/firewoodstack.jpeg";
 import Navigation from "../screensByEoin/Navigation";
 import VideoAndDesc from "../screensByEoin/VideoAndDesc";
-import Footer from '../screensByEoin/Footer';
+import Footer from "../screensByEoin/Footer";
 
 function HomeScreen(props) {
   const [searchKeyword, setSearchKeyword] = useState("");
@@ -62,7 +62,7 @@ function HomeScreen(props) {
         </li>
       </ul> */}
       <div className="containerByEoin">
-        <h2>Products</h2>
+        <h2 id="products">Products</h2>
         {loading ? (
           <div>Loading...</div>
         ) : error ? (
@@ -82,7 +82,9 @@ function HomeScreen(props) {
                   <div className="product-name">
                     <Link to={"/product/" + product._id}>{product.name}</Link>
                   </div>
-                  <div className="product-brand">{product.weightOrDimensions}</div>
+                  <div className="product-brand">
+                    {product.weightOrDimensions}
+                  </div>
                   <div className="product-price">€{product.price}</div>
                   <div className="product-rating">
                     <Rating
@@ -95,6 +97,17 @@ function HomeScreen(props) {
             ))}
           </ul>
         )}
+        <div className="homepageSection">
+          <hr className="smallHR" />
+          <h4 className="supplytext">
+            <i>
+              We have been supplying firewood and tree services for over 40
+              years.
+            </i>
+          </h4>
+          <hr className="smallHR" />
+        </div>
+
         <hr />
         <div className="homepageSection">
           <h2>How It Works</h2>
@@ -104,40 +117,56 @@ function HomeScreen(props) {
             2&#41; We deliver your bags of naturally seasoned, dry
             firewood(adjectives + benefits + consider feelings we want to evoke)
             that is ready to heat you and your home. Our firewood comes from
-            dangerous trees that had to be cut down for safety reasons. <br/>
-            3&#41; Something goes here.<br/>
+            dangerous trees that had to be cut down for safety reasons. <br />
+            3&#41; Something goes here.
+            <br />
           </p>
         </div>
         <hr />
 
         <div className="homepageSection">
           <h2>Our Firewood</h2>
-          <ul>
-            <li>
-              Comes from dangerous trees that had to be cut down for safety
-              reasons.
-            </li>
-            <li>
-              Naturally dried and seasoned in our yard in the centre of Ireland
-              for at least 2 years.
-            </li>
-          </ul>
+          <section className="flexThisEvenly">
+            <div>
+              <ul>
+                <li>
+                  Comes from dangerous trees that had to be cut down for safety
+                  reasons.
+                </li>
+                <li>
+                  Naturally dried and seasoned in our yard in the centre of
+                  Ireland for at least 2 years.
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h2>Placeholder for an image</h2>
+              <img />
+            </div>
+          </section>
         </div>
         <hr />
 
         <div className="homepageSection">
-          <h2>About Us</h2>
-          <p>
-            Mick Lynch &amp; Son Tree Surgery have been felling dangerous trees
-            and selling firewood since 19XX. In response to an increasing demand
-            for timber based products in the midlands, John Lynch decided to
-            setup timberandmulch.ie and the necessary infrastructure to process
-            and sell firewood, bark mulch and slabs of hardwood for furniture,
-            construction, design and more.
-          </p>
+          <h2 id="about">About Us</h2>
+          <section className="flexThisEvenly">
+            <div>
+              <h2>Placeholder for an image</h2>
+            </div>
+            <div>
+              <p>
+                Mick Lynch &amp; Son Tree Surgery have been felling dangerous
+                trees and selling firewood since 19XX. In response to an
+                increasing demand for timber based products in the midlands,
+                John Lynch decided to setup timberandmulch.ie and the necessary
+                infrastructure to process and sell firewood, bark mulch and
+                slabs of hardwood for furniture, construction, design and more.
+              </p>
+            </div>
+          </section>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 }

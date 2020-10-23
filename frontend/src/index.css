@@ -32,9 +32,21 @@ button {
   background-color: #56c55d;
   color: #ffffff;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
-  padding: 5rem 0rem;
+  padding: 1rem 0rem;
+}
+
+.header a{
+  color: white;
+}
+
+.straightenThis{
+  display: flex;
+}
+
+.navForMobiles{
+  display: none;
 }
 
 .shoppingCartIcon img{
@@ -475,3 +487,20 @@ tbody > tr:nth-child(odd) {
   width: 100%;
 }
 
+.smallHR{
+  width: 20%;
+}
+
+.supplytext{
+  display: flex;
+  justify-content: center;
+}
+
+.homepageSection{
+  height: 20rem;
+}
+
+.flexThisEvenly{
+  display: flex;
+  justify-content: space-evenly;
+}
