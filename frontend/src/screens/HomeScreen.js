@@ -112,6 +112,7 @@ function HomeScreen(props) {
         <div className="homepageSection">
           <h2>How It Works</h2>
           <p>
+            **Make an infographic from https://infograph.venngage.com/templates/infographics/process
             1&#41; You order firewood.
             <br />
             2&#41; We deliver your bags of naturally seasoned, dry
