@@ -2,6 +2,8 @@ import express from 'express';
 import User from '../models/userModel';
 import { getToken, isAuth } from '../util';
 
+const bcrypt = require('bcryptjs');
+
 const router = express.Router();
 
 router.put('/:id', isAuth, async (req, res) => {
@@ -10,7 +12,7 @@ router.put('/:id', isAuth, async (req, res) => {
   if (user) {
     user.name = req.body.name || user.name;
     user.email = req.body.email || user.email;
-    user.password = req.body.password || user.password;
+    user.password = bcrypt.hashSync(req.body.password, 6) || bcrypt.hashSync(user.password);
     const updatedUser = await user.save();
     res.send({
       _id: updatedUser.id,
@@ -46,7 +48,7 @@ router.post('/register', async (req, res) => {
   const user = new User({
     name: req.body.name,
     email: req.body.email,
-    password: req.body.password,
+    password: bcrypt.hashSync(req.body.password, 6),
   });
   const newUser = await user.save();
   if (newUser) {
