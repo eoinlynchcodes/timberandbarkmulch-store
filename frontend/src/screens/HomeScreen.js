@@ -36,9 +36,7 @@ function HomeScreen(props) {
   return (
     <>
       <Navigation />
-      <div className="firewoodSection">
-        <img src={firewoodstack} />
-      </div>
+      <div className="containerByEoin">
       <VideoAndDesc />
       {/* {category && <h2>{category}</h2>} */}
 
@@ -61,7 +59,6 @@ function HomeScreen(props) {
           </select>
         </li>
       </ul> */}
-      <div className="containerByEoin">
         <h2 id="products">Products</h2>
         {loading ? (
           <div>Loading...</div>
@@ -125,6 +122,13 @@ function HomeScreen(props) {
         </div>
         <hr />
 
+        </div>
+
+        <div className="firewoodSection">
+        <img src={firewoodstack} />
+      </div>
+
+      <div className="containerByEoin">
         <div className="homepageSection">
           <h2>Our Firewood</h2>
           <section className="flexThisEvenly">
