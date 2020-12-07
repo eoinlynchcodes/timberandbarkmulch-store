@@ -19,11 +19,14 @@ function Navigation(props) {
   };
 
   return (
+
+
+            
+
+
     <div>
       <header className="header">
-        <button className="navForMobiles" onClick={openMenu}>
-          &#9776;
-        </button>
+        <button className="" onClick={openMenu}>&#9776;</button>
         <Link to="/">
           <h1>timberandbarkmulch.ie</h1>
         </Link>
@@ -55,11 +58,11 @@ function Navigation(props) {
         </button>
         <ul className="categories">
           <li>
-            <Link to="/category/Pants">Pants</Link>
+            <Link to="/">Link One</Link>
           </li>
 
           <li>
-            <Link to="/category/Shirts">Shirts</Link>
+            <Link to="/">Link Two</Link>
           </li>
         </ul>
       </aside>

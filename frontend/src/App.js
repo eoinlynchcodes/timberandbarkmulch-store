@@ -16,15 +16,15 @@ import ProfileScreen from './screens/ProfileScreen';
 import OrdersScreen from './screens/OrdersScreen';
 
 function App() {
-  // const userSignin = useSelector((state) => state.userSignin);
-  // const { userInfo } = userSignin;
+  const userSignin = useSelector((state) => state.userSignin);
+  const { userInfo } = userSignin;
 
-  // const openMenu = () => {
-  //   document.querySelector('.sidebar').classList.add('open');
-  // };
-  // const closeMenu = () => {
-  //   document.querySelector('.sidebar').classList.remove('open');
-  // };
+  const openMenu = () => {
+    document.querySelector('.sidebar').classList.add('open');
+  };
+  const closeMenu = () => {
+    document.querySelector('.sidebar').classList.remove('open');
+  };
   return (
     <BrowserRouter>
       {/* <div className="grid-container"> */}

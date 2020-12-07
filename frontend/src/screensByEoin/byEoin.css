@@ -1,26 +1,33 @@
 .videoAndDescription{
-    height: 50rem;
     display: flex;
+    flex-direction: row;
+    height: 40em;
+    width: 100%;
 }
 
 .left33{
-    width: 40%;
-    background-color: #333333;
     color: orange;
     display: flex;
     justify-content: center;
     align-items: center;
+    max-width: 60%;
+}
+
+.left33 .textToSquare{
+    height: auto;
+    background-color: black;
 }
 
 .right66{
-    width: 60%;
+    max-width: 40%;
+}
+
+.right66 img{
+    max-height: 100%;
+    height: auto;
 }
 
 .contactForm{
     display: flex;
     flex-direction: column;
-}
-
-.footerByEoin{
-    
 }
