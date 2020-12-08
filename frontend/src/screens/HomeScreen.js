@@ -9,6 +9,8 @@ import Navigation from "../screensByEoin/Navigation";
 import VideoAndDesc from "../screensByEoin/VideoAndDesc";
 import Footer from "../screensByEoin/Footer";
 import timberstack from "../imagesByEoin/timberstack.jpg";
+import yard from "../imagesByEoin/yard.jpg";
+
 
 function HomeScreen(props) {
   const [qty, setQty] = useState(1);
@@ -98,29 +100,29 @@ function HomeScreen(props) {
                           alt="product"
                         />
                       </Link>
-                      <div className="product-name">
-                        <Link to={"/product/" + product._id}>
+                      <div className="product-name pad">
+                        <Link className="product-actual-name" to={"/product/" + product._id}>
                           {product.name}
                         </Link>
                       </div>
-                      <div className="product-brand">
+                      <div className="product-brand pad">
                         {product.weightOrDimensions}
                       </div>
-                      <div className="product-price">€{product.price}</div>
-                      <div className="product-rating">
+                      <div className="product-price pad"> {product.price ? '€' : null}</div>
+                      <div className="product-rating pad">
                         <Rating
                           value={product.rating}
                           text={product.numReviews + " reviews"}
                         />
                       </div>
-                      {product.countInStock > 0 && (
+                      {product.countInStock > 0 ? (
                         <button
                           onClick={handleAddToCart}
                           className="button primary"
                         >
                           Add to Cart
                         </button>
-                      )}
+                      ) : <button className="button primary">Email Us For Orders</button>}
                     </div>
                   </li>
                 ))}
@@ -183,9 +185,8 @@ function HomeScreen(props) {
                   </li>
                 </ul>
               </div>
-              <div>
-                <h2>Placeholder for an image</h2>
-                <img />
+              <div className="imagecontainer">
+                <img className="imagetocontain" src={yard} />
               </div>
             </section>
           </div>

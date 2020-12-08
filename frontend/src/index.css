@@ -112,10 +112,29 @@ a:hover {
   height: 100%;
   border: .5px double black;
 }
+
+.product img{
+  overflow: hidden;
+  width: 100%;
+  height: 30rem;
+}
+
+.pad{
+  padding-left: 1em;
+  padding-right: 1em
+}
+
 .product-name {
+  color: white;
   font-size: 2rem;
   font-weight: bold;
 }
+
+.product-actual-name{
+  color: #333333;
+  
+}
+
 .product-brand {
   font-size: 1.2rem;
   color: #808080;
@@ -553,7 +572,6 @@ tbody > tr:nth-child(odd) {
 }
 
 .homepageSectionFirewood{
-  height: 30em;
   background-color: #686868;
   color: white;
   display: flex;
@@ -598,3 +616,10 @@ tbody > tr:nth-child(odd) {
   max-width: 50%;
 }
 
+.imagetocontain{
+  max-width: 100%;
+}
+
+.imagecontainer{
+  max-width: 100%;
+}
