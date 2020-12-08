@@ -8,6 +8,7 @@ import firewoodstack from "../imagesByEoin/firewoodstack.jpeg";
 import Navigation from "../screensByEoin/Navigation";
 import VideoAndDesc from "../screensByEoin/VideoAndDesc";
 import Footer from "../screensByEoin/Footer";
+import timberstack from '../imagesByEoin/timberstack.jpg';
 
 function HomeScreen(props) {
   const [searchKeyword, setSearchKeyword] = useState("");
@@ -62,6 +63,17 @@ function HomeScreen(props) {
         </li>
       </ul> */}
       <div className="containerByEoin">
+
+      <div className="homepageSectionOne">
+          <hr className="smallHR" />
+          <h2 className="supplytext">
+            <i>
+            40 years of supplying firewood, timber products and tree services.
+            </i>
+          </h2>
+          <hr className="smallHR" />
+        </div>
+        
         <section className="products-section">
           <div className="forPaddingSections">
             <h1 id="products">Products</h1>
@@ -96,6 +108,7 @@ function HomeScreen(props) {
                           text={product.numReviews + " reviews"}
                         />
                       </div>
+                      <button onClick>Hi there</button>
                     </div>
                   </li>
                 ))}
@@ -104,40 +117,45 @@ function HomeScreen(props) {
           </div>
         </section>
 
-        <div className="homepageSection">
-          <hr className="smallHR" />
-          <h4 className="supplytext">
-            <i>
-              We have been supplying firewood and tree services for over 40
-              years.
-            </i>
-          </h4>
-        </div>
-
-        <hr />
-        <section className="homepageSection">
+        <section className="">
           <div className="forPaddingSections">
             <h2>How It Works</h2>
-            <p>
-              **Make an infographic from
-              https://infograph.venngage.com/templates/infographics/process
-              1&#41; You order firewood.
-              <br />
-              2&#41; We deliver your bags of naturally seasoned, dry
-              firewood(adjectives + benefits + consider feelings we want to
-              evoke) that is ready to heat you and your home. Our firewood comes
-              from dangerous trees that had to be cut down for safety reasons.{" "}
-              <br />
-              3&#41; Something goes here.
-              <br />
-            </p>
+            <div className="inforgraphic">
+            <div className="inside-infographic">
+              <h1>1</h1>
+              <h3>Order Firewood</h3>
+              </div>
+              <p className="inforgraphic-text">Order, pay and read reviews online</p>
+            </div>
+
+            <div className="inforgraphic">
+            <div className="inside-infographic">
+              <h1>2</h1>
+              <h3>Choose Delivery or Collection</h3>
+              </div>
+              <p className="inforgraphic-text"> 
+              Receive firewood delivery or schedule a time for collection from our yard in Mullingar.
+              </p>
+            </div>
+
+            <div className="inforgraphic">
+              <div className="inside-infographic">
+              <h1>3</h1>
+              <h3>Heat from your fire.</h3>
+              </div>
+              <p className="inforgraphic-text">All of our firewood is seasoned for at least 2 years.</p>
+            </div>
+
+            <div>
+
+            </div>
           </div>
         </section>
 
-        <section className="homepageSection">
+        <section className="homepageSectionFirewood">
         <div className="forPaddingSections">
           <h2>Our Firewood</h2>
-          <section className="flexThisEvenly">
+          <section className="">
             <div>
               <ul>
                 <li>
@@ -158,12 +176,12 @@ function HomeScreen(props) {
           </div>
         </section>
 
-        <section className="homepageSection">
+        <section className="about-section">
         <div className="forPaddingSections">
           <h1 id="about">About Us</h1>
-          <section className="flexThisEvenly">
+          <section>
             <div>
-              <h2>Placeholder for an image</h2>
+              <img src={timberstack} />
             </div>
             <div>
               <p>

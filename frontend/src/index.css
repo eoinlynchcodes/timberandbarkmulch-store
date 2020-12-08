@@ -544,6 +544,22 @@ tbody > tr:nth-child(odd) {
   height: 30em;
 }
 
+.homepageSectionOne{
+  height: 10em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.homepageSectionFirewood{
+  height: 30em;
+  background-color: #686868;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
 .forPaddingSections{
   padding: 2em 2em;
 }
@@ -552,3 +568,33 @@ tbody > tr:nth-child(odd) {
   display: flex;
   justify-content: space-evenly;
 }
+
+.about-section{
+  margin: 0 auto;
+}
+
+.about-section img{
+  width: 100%;
+  height: auto;
+}
+
+.inforgraphic{
+  border: 1px solid black;
+  display: flex;
+}
+
+.inside-infographic{
+  width: 30%;
+  border-right: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.inforgraphic-text{
+  display: flex;
+  align-self: center;
+  margin: 0 5%;
+  max-width: 50%;
+}
+
