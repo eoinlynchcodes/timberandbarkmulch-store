@@ -6,6 +6,7 @@ import {
   listProducts,
   deleteProdcut,
 } from '../actions/productActions';
+import Navigation from '../screensByEoin/Navigation.js';
 
 function ProductsScreen(props) {
   const [modalVisible, setModalVisible] = useState(false);
@@ -76,10 +77,12 @@ function ProductsScreen(props) {
     dispatch(deleteProdcut(product._id));
   };
   const uploadFileHandler = (e) => {
+    debugger
     const file = e.target.files[0];
     const bodyFormData = new FormData();
     bodyFormData.append('image', file);
     setUploading(true);
+    console.log(bodyFormData);
     axios
       .post('/api/uploads', bodyFormData, {
         headers: {
@@ -96,6 +99,8 @@ function ProductsScreen(props) {
       });
   };
   return (
+    <section>
+    <Navigation />
     <div className="content content-margined">
       <div className="product-header">
         <h3>Products</h3>
@@ -243,6 +248,7 @@ function ProductsScreen(props) {
         </table>
       </div>
     </div>
+    </section>
   );
 }
 export default ProductsScreen;

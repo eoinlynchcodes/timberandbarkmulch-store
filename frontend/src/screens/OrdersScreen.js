@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { listOrders, deleteOrder } from '../actions/orderActions';
+import Navigation from '../screensByEoin/Navigation.js';
 
 function OrdersScreen(props) {
   const orderList = useSelector(state => state.orderList);
@@ -22,7 +23,10 @@ function OrdersScreen(props) {
   const deleteHandler = (order) => {
     dispatch(deleteOrder(order._id));
   }
-  return loading ? <div>Loading...</div> :
+  return (
+    <section>
+      <Navigation />
+    {loading ? <div>Loading...</div> :
     <div className="content content-margined">
 
       <div className="order-header">
@@ -64,6 +68,8 @@ function OrdersScreen(props) {
         </table>
 
       </div>
-    </div>
+    </div>}
+    </section>
+  );
 }
 export default OrdersScreen;

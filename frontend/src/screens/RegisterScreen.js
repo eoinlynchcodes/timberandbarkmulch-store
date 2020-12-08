@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { register } from '../actions/userActions';
+import Navigation from '../screensByEoin/Navigation.js';
 
 function RegisterScreen(props) {
 
@@ -27,7 +28,10 @@ function RegisterScreen(props) {
     e.preventDefault();
     dispatch(register(name, email, password));
   }
-  return <div className="form">
+  return (
+  <section>
+    <Navigation/>
+  <div className="form">  
     <form onSubmit={submitHandler} >
       <ul className="form-container">
         <li>
@@ -62,16 +66,17 @@ function RegisterScreen(props) {
           </input>
         </li>
         <li>
-          <button type="submit" className="button primary">Register</button>
+          <button type="submit" className="button primary"><b>Create Account</b></button>
         </li>
         <li>
-          Already have an account?
-          <Link to={redirect === "/" ? "signin" : "signin?redirect=" + redirect} className="button secondary text-center" >Create your amazona account</Link>
-
+          <span className="account-already-text">Already have an account?</span>
+          <Link to={redirect === "/" ? "signin" : "signin?redirect=" + redirect} className="button secondary text-center" ><b>Login</b></Link>
         </li>
 
       </ul>
     </form>
   </div>
+  </section>
+  );
 }
 export default RegisterScreen;

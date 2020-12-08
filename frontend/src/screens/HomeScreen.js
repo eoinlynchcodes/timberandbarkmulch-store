@@ -36,8 +36,10 @@ function HomeScreen(props) {
   return (
     <>
       <Navigation />
-      <div className="containerByEoin">
       <VideoAndDesc />
+      <div className="firewoodSection">
+        <img src={firewoodstack} />
+      </div>
       {/* {category && <h2>{category}</h2>} */}
 
       {/* <ul className="filter">
@@ -59,41 +61,49 @@ function HomeScreen(props) {
           </select>
         </li>
       </ul> */}
-        <h2 id="products">Products</h2>
-        {loading ? (
-          <div>Loading...</div>
-        ) : error ? (
-          <div>{error}</div>
-        ) : (
-          <ul className="products">
-            {products.map((product) => (
-              <li key={product._id}>
-                <div className="product">
-                  <Link to={"/product/" + product._id}>
-                    <img
-                      className="product-image"
-                      src={product.image}
-                      alt="product"
-                    />
-                  </Link>
-                  <div className="product-name">
-                    <Link to={"/product/" + product._id}>{product.name}</Link>
-                  </div>
-                  <div className="product-brand">
-                    {product.weightOrDimensions}
-                  </div>
-                  <div className="product-price">€{product.price}</div>
-                  <div className="product-rating">
-                    <Rating
-                      value={product.rating}
-                      text={product.numReviews + " reviews"}
-                    />
-                  </div>
-                </div>
-              </li>
-            ))}
-          </ul>
-        )}
+      <div className="containerByEoin">
+        <section className="products-section">
+          <div className="forPaddingSections">
+            <h1 id="products">Products</h1>
+            {loading ? (
+              <div>Loading...</div>
+            ) : error ? (
+              <div>{error}</div>
+            ) : (
+              <ul className="products">
+                {products.map((product) => (
+                  <li key={product._id}>
+                    <div className="product">
+                      <Link to={"/product/" + product._id}>
+                        <img
+                          className="product-image"
+                          src={product.image}
+                          alt="product"
+                        />
+                      </Link>
+                      <div className="product-name">
+                        <Link to={"/product/" + product._id}>
+                          {product.name}
+                        </Link>
+                      </div>
+                      <div className="product-brand">
+                        {product.weightOrDimensions}
+                      </div>
+                      <div className="product-price">€{product.price}</div>
+                      <div className="product-rating">
+                        <Rating
+                          value={product.rating}
+                          text={product.numReviews + " reviews"}
+                        />
+                      </div>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        </section>
+
         <div className="homepageSection">
           <hr className="smallHR" />
           <h4 className="supplytext">
@@ -102,34 +112,30 @@ function HomeScreen(props) {
               years.
             </i>
           </h4>
-          <hr className="smallHR" />
         </div>
 
         <hr />
-        <div className="homepageSection">
-          <h2>How It Works</h2>
-          <p>
-            **Make an infographic from https://infograph.venngage.com/templates/infographics/process
-            1&#41; You order firewood.
-            <br />
-            2&#41; We deliver your bags of naturally seasoned, dry
-            firewood(adjectives + benefits + consider feelings we want to evoke)
-            that is ready to heat you and your home. Our firewood comes from
-            dangerous trees that had to be cut down for safety reasons. <br />
-            3&#41; Something goes here.
-            <br />
-          </p>
-        </div>
-        <hr />
+        <section className="homepageSection">
+          <div className="forPaddingSections">
+            <h2>How It Works</h2>
+            <p>
+              **Make an infographic from
+              https://infograph.venngage.com/templates/infographics/process
+              1&#41; You order firewood.
+              <br />
+              2&#41; We deliver your bags of naturally seasoned, dry
+              firewood(adjectives + benefits + consider feelings we want to
+              evoke) that is ready to heat you and your home. Our firewood comes
+              from dangerous trees that had to be cut down for safety reasons.{" "}
+              <br />
+              3&#41; Something goes here.
+              <br />
+            </p>
+          </div>
+        </section>
 
-        </div>
-
-        <div className="firewoodSection">
-        <img src={firewoodstack} />
-      </div>
-
-      <div className="containerByEoin">
-        <div className="homepageSection">
+        <section className="homepageSection">
+        <div className="forPaddingSections">
           <h2>Our Firewood</h2>
           <section className="flexThisEvenly">
             <div>
@@ -149,11 +155,12 @@ function HomeScreen(props) {
               <img />
             </div>
           </section>
-        </div>
-        <hr />
+          </div>
+        </section>
 
-        <div className="homepageSection">
-          <h2 id="about">About Us</h2>
+        <section className="homepageSection">
+        <div className="forPaddingSections">
+          <h1 id="about">About Us</h1>
           <section className="flexThisEvenly">
             <div>
               <h2>Placeholder for an image</h2>
@@ -165,11 +172,13 @@ function HomeScreen(props) {
                 increasing demand for timber based products in the midlands,
                 John Lynch decided to setup timberandmulch.ie and the necessary
                 infrastructure to process and sell firewood, bark mulch and
-                slabs of hardwood for furniture, construction, design and more.
+                slabs of hardwood for use with furniture, construction, art,
+                design and more.
               </p>
             </div>
           </section>
-        </div>
+          </div>
+        </section>
       </div>
       <Footer />
     </>

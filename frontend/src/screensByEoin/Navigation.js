@@ -19,34 +19,29 @@ function Navigation(props) {
   };
 
   return (
-
-
-            
-
-
     <div>
       <header className="header">
-        <button className="" onClick={openMenu}>&#9776;</button>
+        <button className="burger-menu" onClick={openMenu}>&#9776;</button>
         <Link to="/">
           <h1>timberandbarkmulch.ie</h1>
         </Link>
-        {userInfo ? <Link to="/profile">Welcome {userInfo.name}</Link> : null}
-        {userInfo && userInfo.isAdmin && (
-          <div className="dropdown">
-            <a href="#">Admin</a>
-            <ul className="dropdown-content">
-              <li>
-                <Link to="/orders">Orders</Link>
-                <Link to="/products">Products</Link>
-              </li>
-            </ul>
-          </div>
-        )}
+        {userInfo ? <Link to="/profile">{userInfo.name}</Link> : null}
+              {userInfo && userInfo.isAdmin && (
+                <div className="dropdown">
+                  <a href="#">Admin</a>
+                  <ul className="dropdown-content">
+                    <li>
+                      <Link to="/orders">Orders</Link>
+                      <Link to="/products">Products</Link>
+                    </li>
+                  </ul>
+                </div>
+              )}
         <div className="straightenThis">
-          <h1><a href="#about">About</a></h1>
-          <h1><a href="#products">Products</a></h1>
+          <h4><a href="#about">About</a></h4>
+          <h4><a href="#products">Products</a></h4>
           <a href="/cart/:id?">
-            <h1>Cart {cart.cartItems.length}</h1>
+            <h4>Cart {cart.cartItems.length ? `(${cart.cartItems.length})` : null}</h4>
           </a>
         </div>
       </header>
