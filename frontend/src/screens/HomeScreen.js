@@ -8,9 +8,11 @@ import firewoodstack from "../imagesByEoin/firewoodstack.jpeg";
 import Navigation from "../screensByEoin/Navigation";
 import VideoAndDesc from "../screensByEoin/VideoAndDesc";
 import Footer from "../screensByEoin/Footer";
-import timberstack from '../imagesByEoin/timberstack.jpg';
+import timberstack from "../imagesByEoin/timberstack.jpg";
 
 function HomeScreen(props) {
+  const [qty, setQty] = useState(1);
+
   const [searchKeyword, setSearchKeyword] = useState("");
   const [sortOrder, setSortOrder] = useState("");
   const category = props.match.params.id ? props.match.params.id : "";
@@ -32,6 +34,10 @@ function HomeScreen(props) {
   const sortHandler = (e) => {
     setSortOrder(e.target.value);
     dispatch(listProducts(category, searchKeyword, sortOrder));
+  };
+
+  const handleAddToCart = () => {
+    props.history.push("/cart/" + props.match.params.id + "?qty=" + 1);
   };
 
   return (
@@ -63,17 +69,16 @@ function HomeScreen(props) {
         </li>
       </ul> */}
       <div className="containerByEoin">
-
-      <div className="homepageSectionOne">
+        <div className="homepageSectionOne">
           <hr className="smallHR" />
           <h2 className="supplytext">
             <i>
-            40 years of supplying firewood, timber products and tree services.
+              40 years of supplying firewood, timber products and tree services.
             </i>
           </h2>
           <hr className="smallHR" />
         </div>
-        
+
         <section className="products-section">
           <div className="forPaddingSections">
             <h1 id="products">Products</h1>
@@ -108,7 +113,14 @@ function HomeScreen(props) {
                           text={product.numReviews + " reviews"}
                         />
                       </div>
-                      <button onClick>Hi there</button>
+                      {product.countInStock > 0 && (
+                        <button
+                          onClick={handleAddToCart}
+                          className="button primary"
+                        >
+                          Add to Cart
+                        </button>
+                      )}
                     </div>
                   </li>
                 ))}
@@ -121,80 +133,83 @@ function HomeScreen(props) {
           <div className="forPaddingSections">
             <h2>How It Works</h2>
             <div className="inforgraphic">
-            <div className="inside-infographic">
-              <h1>1</h1>
-              <h3>Order Firewood</h3>
+              <div className="inside-infographic">
+                <h1>1</h1>
+                <h3>Order Firewood</h3>
               </div>
-              <p className="inforgraphic-text">Order, pay and read reviews online</p>
-            </div>
-
-            <div className="inforgraphic">
-            <div className="inside-infographic">
-              <h1>2</h1>
-              <h3>Choose Delivery or Collection</h3>
-              </div>
-              <p className="inforgraphic-text"> 
-              Receive firewood delivery or schedule a time for collection from our yard in Mullingar.
+              <p className="inforgraphic-text">
+                Order, pay and read reviews online
               </p>
             </div>
 
             <div className="inforgraphic">
               <div className="inside-infographic">
-              <h1>3</h1>
-              <h3>Heat from your fire.</h3>
+                <h1>2</h1>
+                <h3>Choose Delivery or Collection</h3>
               </div>
-              <p className="inforgraphic-text">All of our firewood is seasoned for at least 2 years.</p>
+              <p className="inforgraphic-text">
+                Receive firewood delivery or schedule a time for collection from
+                our yard in Mullingar.
+              </p>
             </div>
 
-            <div>
-
+            <div className="inforgraphic">
+              <div className="inside-infographic">
+                <h1>3</h1>
+                <h3>Heat from your fire.</h3>
+              </div>
+              <p className="inforgraphic-text">
+                All of our firewood is seasoned for at least 2 years.
+              </p>
             </div>
+
+            <div></div>
           </div>
         </section>
 
         <section className="homepageSectionFirewood">
-        <div className="forPaddingSections">
-          <h2>Our Firewood</h2>
-          <section className="">
-            <div>
-              <ul>
-                <li>
-                  Comes from dangerous trees that had to be cut down for safety
-                  reasons.
-                </li>
-                <li>
-                  Naturally dried and seasoned in our yard in the centre of
-                  Ireland for at least 2 years.
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h2>Placeholder for an image</h2>
-              <img />
-            </div>
-          </section>
+          <div className="forPaddingSections">
+            <h2>Our Firewood</h2>
+            <section className="">
+              <div>
+                <ul>
+                  <li>
+                    Comes from dangerous trees that had to be cut down for
+                    safety reasons.
+                  </li>
+                  <li>
+                    Naturally dried and seasoned in our yard in the centre of
+                    Ireland for at least 2 years.
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h2>Placeholder for an image</h2>
+                <img />
+              </div>
+            </section>
           </div>
         </section>
 
         <section className="about-section">
-        <div className="forPaddingSections">
-          <h1 id="about">About Us</h1>
-          <section>
-            <div>
-              <img src={timberstack} />
-            </div>
-            <div>
-              <p>
-                Mick Lynch &amp; Son Tree Surgery have been felling dangerous
-                trees and selling firewood since 19XX. In response to an
-                increasing demand for timber based products in the midlands,
-                John Lynch decided to setup timberandmulch.ie and the necessary
-                infrastructure to process and sell firewood, bark mulch and
-                slabs of hardwood for use with furniture, construction, art,
-                design and more.
-              </p>
-            </div>
-          </section>
+          <div className="forPaddingSections">
+            <h1 id="about">About Us</h1>
+            <section>
+              <div>
+                <img src={timberstack} />
+              </div>
+              <div>
+                <p>
+                  Mick Lynch &amp; Son Tree Surgery have been felling dangerous
+                  trees and selling firewood since 19XX. In response to an
+                  increasing demand for timber based products in the midlands,
+                  John Lynch decided to setup timberandmulch.ie and the
+                  necessary infrastructure to process and sell firewood, bark
+                  mulch and slabs of hardwood for use with furniture,
+                  construction, art, design and more.
+                </p>
+              </div>
+            </section>
           </div>
         </section>
       </div>
