@@ -105,7 +105,7 @@ a:hover {
   padding: 0;
   flex: 0 1 34rem;
   margin: 1rem;
-  height: 50rem;
+  height: 45rem;
   border-bottom: 0.1rem #c0c0c0 solid;
 }
 .product {
@@ -179,6 +179,10 @@ ul.review {
   width: 40%;
   display: flex;
   justify-content: center;
+}
+
+.whitetext{
+  color: white;
 }
 
 /* Rating */
@@ -561,7 +565,7 @@ tbody > tr:nth-child(odd) {
 }
 
 .firewoodSection{
-  height: 20em;
+  height: 10em;
   overflow: hidden;
 }
 
@@ -601,6 +605,12 @@ tbody > tr:nth-child(odd) {
 
 .forPaddingSections{
   padding: 2em 2em;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.product-padding-section{
+  padding: 2em 0em;
   width: 80%;
   margin: 0 auto;
 }

@@ -114,7 +114,7 @@ function HomeScreen(props) {
 
       <div className="containerByEoin">
         <section className="products-section">
-          <div className="forPaddingSections">
+          <div className="product-padding-section">
             <h1 id="products">Products</h1>
             {loading ? (
               <div>Loading...</div>
@@ -163,9 +163,7 @@ function HomeScreen(props) {
                             Add to Cart
                           </div>
                         ) : (
-                          <div className="button primary">
-                            Email Us For Orders
-                          </div>
+                          <div className="button primary"><a href="#contact" className="whitetext">Email Us For Orders</a></div>
                         )}
                       </div>
                     </div>
@@ -232,7 +230,7 @@ function HomeScreen(props) {
               <div className="imagecontainer">
                 <img className="imagetocontain" src={yard} />
               </div>
-              <div>
+              <div className="forPaddingSections">
                 <ul>
                   <li>Seasoned for at least two years.</li>
                   <li>
@@ -256,7 +254,7 @@ function HomeScreen(props) {
               <div>
                 <img src={timberstack} />
               </div>
-              <div>
+              <div className="forPaddingSections">                
                 <p>
                   Mick Lynch &amp; Son Tree Surgery have been felling dangerous
                   trees and selling firewood since 19XX. In response to an
@@ -273,7 +271,7 @@ function HomeScreen(props) {
 
         <section className="contact-section">
           <div className="forPaddingSections">
-            <h1>Contact</h1>
+            <h1 id="contact">Contact</h1>
             <form className="contactForm">
               <label>Name:</label>
               <input type="text" />
