@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { signin } from "../actions/userActions";
-import Navigation from "../screensByEoin/Navigation";
+import Navigation from "../components/Navigation.js";
 
 function SigninScreen(props) {
   const [email, setEmail] = useState("");

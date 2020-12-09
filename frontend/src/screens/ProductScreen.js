@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { detailsProduct, saveProductReview } from '../actions/productActions';
 import Rating from '../components/Rating';
 import { PRODUCT_REVIEW_SAVE_RESET } from '../constants/productConstants';
-import Navigation from '../screensByEoin/Navigation';
+import Navigation from '../components/Navigation.js';
 
 function ProductScreen(props) {
   const [qty, setQty] = useState(1);

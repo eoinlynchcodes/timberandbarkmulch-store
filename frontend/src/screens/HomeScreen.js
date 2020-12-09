@@ -5,12 +5,11 @@ import { useSelector, useDispatch } from "react-redux";
 import { listProducts } from "../actions/productActions";
 import Rating from "../components/Rating";
 import firewoodstack from "../imagesByEoin/firewoodstack.jpeg";
-import Navigation from "../screensByEoin/Navigation";
-import VideoAndDesc from "../screensByEoin/VideoAndDesc";
-import Footer from "../screensByEoin/Footer";
+import Navigation from "../components/Navigation";
 import timberstack from "../imagesByEoin/timberstack.jpg";
 import yard from "../imagesByEoin/yard.jpg";
-
+import stoveburning from "../imagesByEoin/stoveburning.png";
+import firewoodgraphic from "../imagesByEoin/firewoodgraphic.png";
 
 function HomeScreen(props) {
   const [qty, setQty] = useState(1);
@@ -45,7 +44,36 @@ function HomeScreen(props) {
   return (
     <>
       <Navigation />
-      <VideoAndDesc />
+      <div className="videoAndDescription">
+        <div className="left33">
+          <div className="textToSquare">
+            <div className="main-text-block">
+              <h1>Firewood Delivered.</h1>
+              <p className="">
+                Order online and get firewood delivered in Westmeath.
+                <br /> Seasoned and dried by air or kiln.
+              </p>
+            </div>
+
+            <div className="firewoodInfographicDiv">
+              <img src={firewoodgraphic} />
+            </div>
+            <div className="flexThisEvenly">
+              <a className="" href="#products">
+                <p className="orderNowButton">Order Now</p>
+              </a>
+              <a className="" href="#products">
+                <p className="seeProductButton"><u>See Products</u></p>
+              </a>
+            </div>          
+          </div>
+        </div>
+
+        <div className="right66">
+          <img src={stoveburning} />
+        </div>
+      </div>
+
       <div className="firewoodSection">
         <img src={firewoodstack} />
       </div>
@@ -70,17 +98,21 @@ function HomeScreen(props) {
           </select>
         </li>
       </ul> */}
-      <div className="containerByEoin">
+
         <div className="homepageSectionOne">
-          <hr className="smallHR" />
-          <h2 className="supplytext">
-            <i>
-              40 years of supplying firewood, timber products and tree services.
-            </i>
-          </h2>
-          <hr className="smallHR" />
+          <div className="forPaddingSections">
+            <hr className="smallHR" />
+            <h2 className="supplytext">
+              <i>
+                40 years of supplying firewood, timber products and tree
+                services.
+              </i>
+            </h2>
+            <hr className="smallHR" />
+          </div>
         </div>
 
+      <div className="containerByEoin">
         <section className="products-section">
           <div className="forPaddingSections">
             <h1 id="products">Products</h1>
@@ -101,28 +133,41 @@ function HomeScreen(props) {
                         />
                       </Link>
                       <div className="product-name pad">
-                        <Link className="product-actual-name" to={"/product/" + product._id}>
+                        <Link
+                          className="product-actual-name"
+                          to={"/product/" + product._id}
+                        >
                           {product.name}
                         </Link>
                       </div>
                       <div className="product-brand pad">
                         {product.weightOrDimensions}
                       </div>
-                      <div className="product-price pad"> {product.price ? '€' : null}</div>
+                      <div className="product-price pad">
+                        {" "}
+                        {product.price ? `€ ${product.price}` : null}
+                      </div>
                       <div className="product-rating pad">
                         <Rating
                           value={product.rating}
                           text={product.numReviews + " reviews"}
                         />
                       </div>
-                      {product.countInStock > 0 ? (
-                        <button
-                          onClick={handleAddToCart}
-                          className="button primary"
-                        >
-                          Add to Cart
-                        </button>
-                      ) : <button className="button primary">Email Us For Orders</button>}
+                      <div className="buttonDivHomepageProduct">
+                        <div className="button fifty">More Information</div>
+                        {product.countInStock > 0 ? (
+                          <div
+                            onClick={handleAddToCart}
+                            className="button primary fifty"
+                          >
+                            Add to Cart
+                          </div>
+                        ) : (
+                          <div className="button primary">
+                            Email Us For Orders
+                          </div>
+                        )}
+                      </div>
                     </div>
                   </li>
                 ))}
@@ -134,47 +179,62 @@ function HomeScreen(props) {
         <section className="">
           <div className="forPaddingSections">
             <h2>How It Works</h2>
-            <div className="inforgraphic">
-              <div className="inside-infographic">
-                <h1>1</h1>
-                <h3>Order Firewood</h3>
+            <section className="grey-border">
+              <div className="inforgraphic greenOne">
+                <div className="inside-infographic">
+                  <h1>1</h1>
+                </div>
+                <div className="inforgraphic-text">
+                  <h3>
+                    <u>Order Firewood</u>
+                  </h3>
+                  <h5>Order, pay and read reviews online</h5>
+                </div>
               </div>
-              <p className="inforgraphic-text">
-                Order, pay and read reviews online
-              </p>
-            </div>
 
-            <div className="inforgraphic">
-              <div className="inside-infographic">
-                <h1>2</h1>
-                <h3>Choose Delivery or Collection</h3>
+              <div className="inforgraphic greenTwo">
+                <div className="inside-infographic">
+                  <h1>2</h1>
+                </div>
+                <div className="inforgraphic-text">
+                  <h3>
+                    <u>Choose Delivery or Collection</u>
+                  </h3>
+                  <h4>
+                    Receive firewood delivery or schedule a time for collection
+                    from our yard in Mullingar.
+                  </h4>
+                </div>
               </div>
-              <p className="inforgraphic-text">
-                Receive firewood delivery or schedule a time for collection from
-                our yard in Mullingar.
-              </p>
-            </div>
 
-            <div className="inforgraphic">
-              <div className="inside-infographic">
-                <h1>3</h1>
-                <h3>Heat from your fire.</h3>
+              <div className="inforgraphic greenThree">
+                <div className="inside-infographic">
+                  <h1>3</h1>
+                </div>
+                <div className="inforgraphic-text">
+                  <h3>
+                    <u>Make use of your new firewood</u>
+                  </h3>
+                  <h4>
+                    All of our firewood is seasoned for at least 2 years. Get
+                    exceptional heat from your fire.
+                  </h4>
+                </div>
               </div>
-              <p className="inforgraphic-text">
-                All of our firewood is seasoned for at least 2 years.
-              </p>
-            </div>
-
-            <div></div>
+            </section>
           </div>
         </section>
 
         <section className="homepageSectionFirewood">
           <div className="forPaddingSections">
             <h2>Our Firewood</h2>
-            <section className="">
+            <section className="grey-border">
+              <div className="imagecontainer">
+                <img className="imagetocontain" src={yard} />
+              </div>
               <div>
                 <ul>
+                  <li>Seasoned for at least two years.</li>
                   <li>
                     Comes from dangerous trees that had to be cut down for
                     safety reasons.
@@ -185,9 +245,6 @@ function HomeScreen(props) {
                   </li>
                 </ul>
               </div>
-              <div className="imagecontainer">
-                <img className="imagetocontain" src={yard} />
-              </div>
             </section>
           </div>
         </section>
@@ -195,7 +252,7 @@ function HomeScreen(props) {
         <section className="about-section">
           <div className="forPaddingSections">
             <h1 id="about">About Us</h1>
-            <section>
+            <section className="grey-border">
               <div>
                 <img src={timberstack} />
               </div>
@@ -213,8 +270,36 @@ function HomeScreen(props) {
             </section>
           </div>
         </section>
+
+        <section className="contact-section">
+          <div className="forPaddingSections">
+            <h1>Contact</h1>
+            <form className="contactForm">
+              <label>Name:</label>
+              <input type="text" />
+              <br />
+
+              <label>Email:</label>
+              <input type="text" />
+              <br />
+
+              <label>Phone Number:</label>
+              <input type="text" />
+              <br />
+
+              <label>Message:</label>
+              <textarea type="textarea" rows="8" />
+              <br />
+              <input
+                type="submit"
+                className="contact-submit-button"
+                value="Send Message"
+              />
+            </form>
+          </div>
+        </section>
       </div>
-      <Footer />
+      <div className="footer">&copy; timberandbarkmulch.ie</div>
     </>
   );
 }

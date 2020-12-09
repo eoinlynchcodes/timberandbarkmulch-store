@@ -6,7 +6,7 @@ import {
   listProducts,
   deleteProdcut,
 } from '../actions/productActions';
-import Navigation from '../screensByEoin/Navigation.js';
+import Navigation from '../components/Navigation.js';
 
 function ProductsScreen(props) {
   const [modalVisible, setModalVisible] = useState(false);

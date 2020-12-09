@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { listOrders, deleteOrder } from '../actions/orderActions';
-import Navigation from '../screensByEoin/Navigation.js';
+import Navigation from '../components/Navigation.js';
 
 function OrdersScreen(props) {
   const orderList = useSelector(state => state.orderList);

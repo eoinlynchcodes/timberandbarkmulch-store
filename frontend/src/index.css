@@ -21,24 +21,27 @@ button {
 }
 
 h1{
-
+  font-size: 2.5em;
 }
 
 h2{
-
+  font-size: 2em;
 }
 
 h3{
-
+  font-size: 1.8em;
 }
 
 h4{
-
-
+  font-size: 1.5em;
 }
 
 h5{
+  font-size: 1.2em;
+}
 
+p, ul, li, i{
+  font-size: 1em;
 }
 
 .header {
@@ -111,6 +114,7 @@ a:hover {
   justify-content: space-between;
   height: 100%;
   border: .5px double black;
+  background-color: white;
 }
 
 .product img{
@@ -146,6 +150,7 @@ a:hover {
 .product-image {
   max-width: 34rem;
   max-height: 34rem;
+  border-bottom: 1px solid black;
 }
 .product-rating {
   margin-bottom: 1rem;
@@ -161,6 +166,19 @@ ul.review {
 }
 .review li > div {
   margin: 0.5rem;
+}
+
+.buttonDivHomepageProduct{
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  padding-bottom: 1em;
+}
+
+.fifty{
+  width: 40%;
+  display: flex;
+  justify-content: center;
 }
 
 /* Rating */
@@ -536,13 +554,14 @@ tbody > tr:nth-child(odd) {
 
 .containerByEoin{
   width: 90%;
-  margin: 0 auto;
-  border-left: .5px solid black;
-  border-right: .5px solid black;
+  margin: 4em auto;
+  border-radius: 12px;
+  overflow: hidden;
+  border: .5px solid black;
 }
 
 .firewoodSection{
-  height: 15rem;
+  height: 20em;
   overflow: hidden;
 }
 
@@ -557,6 +576,8 @@ tbody > tr:nth-child(odd) {
 .supplytext{
   display: flex;
   justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .homepageSection{
@@ -580,11 +601,31 @@ tbody > tr:nth-child(odd) {
 
 .forPaddingSections{
   padding: 2em 2em;
+  width: 80%;
+  margin: 0 auto;
 }
 
 .flexThisEvenly{
   display: flex;
-  justify-content: space-evenly;
+  align-items: center;
+}
+
+.seeProductButton{
+  color: black;
+  padding: 0.25em 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.orderNowButton{
+  background-color: orange;
+  color: white;
+  border-radius: 24px;
+  padding: 0.25em .5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .about-section{
@@ -596,9 +637,18 @@ tbody > tr:nth-child(odd) {
   height: auto;
 }
 
+.grey-border{
+  border: 2px solid grey;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: white;
+  color: black;
+}
+
 .inforgraphic{
   border: 1px solid black;
   display: flex;
+  color: white;
 }
 
 .inside-infographic{
@@ -607,13 +657,17 @@ tbody > tr:nth-child(odd) {
   display: flex;
   flex-direction: column;
   text-align: center;
+  justify-content: center;
+  align-content:center;
 }
 
 .inforgraphic-text{
   display: flex;
+  flex-direction: column;
   align-self: center;
   margin: 0 5%;
   max-width: 50%;
+  color: white;
 }
 
 .imagetocontain{
@@ -622,4 +676,103 @@ tbody > tr:nth-child(odd) {
 
 .imagecontainer{
   max-width: 100%;
+}
+
+.contact-section{
+  background-color: #0a2540;
+  color: white;
+}
+
+.greenOne{
+  background-color: #006600;
+}
+
+.greenTwo{
+  background-color: #009900;
+}
+
+.greenThree{
+  background-color: #00cc00;
+}
+
+.videoAndDescription{
+  display: flex;
+  flex-direction: row;
+  height: 35em;
+  width: 80%;
+  overflow: hidden;
+  margin: 2em auto;
+  border: 0.1px solid #e5e7eb;
+  border-radius: 12px;
+}
+
+.left33{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+}
+
+.left33 .textToSquare{
+  height: auto;
+  padding: 2em 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-items: center;
+}
+
+.main-text-block{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 70%;
+}
+
+.firewoodInfographicDiv img{
+  border-radius: 24px;
+  border: 2px solid black;
+}
+
+.right66{
+  max-width: 40%;
+  overflow: hidden;
+  height: auto;
+}
+
+.right66 img{
+  max-height: 100%;
+}
+
+.orangeText{
+  color: orange;
+}
+
+.contactForm{
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  background-color: white;
+  color: black;
+  padding: 2em 2em;
+  border: 1px solid grey;
+  border-radius: 12px;
+}
+
+/*  */
+/* Homepage */
+/*  */
+
+/* Products Section */
+.products-section{
+  background-color: #E0E0E0;
+}
+
+
+.contact-submit-button{
+  background-color: #0394fc;
+  color: black;
+  width: 50%;
+  margin: 0 auto;
 }
