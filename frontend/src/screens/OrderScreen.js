@@ -74,7 +74,7 @@ function OrderScreen(props) {
                       </div>
                       <div className="cart-name">
                         <div>
-                          <Link to={"/product/" + item.product}>
+                          <Link to={"/product/" + item.product} className="black-text">
                             {item.name}
                           </Link>
 

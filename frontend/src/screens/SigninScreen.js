@@ -76,6 +76,53 @@ function SigninScreen(props) {
             </li>
           </ul>
         </form>
+
+        <form onSubmit={submitHandler}>
+          <ul className="form-container">
+            <li>
+              <h2>Guest Checkout</h2>
+            </li>
+            <li>
+              {loading && <div>Loading...</div>}
+              {error && <div>{error}</div>}
+            </li>
+            <li>
+              <label htmlFor="email">Email</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                onChange={(e) => setEmail(e.target.value)}
+              ></input>
+            </li>
+            <li>
+              <label htmlFor="password">Password</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                onChange={(e) => setPassword(e.target.value)}
+              ></input>
+            </li>
+            <li>
+              <button type="submit" className="button primary">
+                Log In
+              </button>
+            </li>
+            <li>
+              <Link
+                to={
+                  redirect === "/"
+                    ? "register"
+                    : "register?redirect=" + redirect
+                }
+                className="button secondary text-center"
+              >
+                Create Account
+              </Link>
+            </li>
+          </ul>
+        </form>
       </div>
     </div>
   );

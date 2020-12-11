@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
-import { detailsProduct, saveProductReview } from '../actions/productActions';
-import Rating from '../components/Rating';
-import { PRODUCT_REVIEW_SAVE_RESET } from '../constants/productConstants';
-import Navigation from '../components/Navigation.js';
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { detailsProduct, saveProductReview } from "../actions/productActions";
+import Rating from "../components/Rating";
+import { PRODUCT_REVIEW_SAVE_RESET } from "../constants/productConstants";
+import Navigation from "../components/Navigation.js";
 
 function ProductScreen(props) {
   const [qty, setQty] = useState(1);
   const [rating, setRating] = useState(0);
-  const [comment, setComment] = useState('');
+  const [comment, setComment] = useState("");
   const userSignin = useSelector((state) => state.userSignin);
   const { userInfo } = userSignin;
   const productDetails = useSelector((state) => state.productDetails);
@@ -20,9 +20,9 @@ function ProductScreen(props) {
 
   useEffect(() => {
     if (productSaveSuccess) {
-      alert('Review submitted successfully.');
+      alert("Review submitted successfully.");
       setRating(0);
-      setComment('');
+      setComment("");
       dispatch({ type: PRODUCT_REVIEW_SAVE_RESET });
     }
     dispatch(detailsProduct(props.match.params.id));
@@ -42,14 +42,14 @@ function ProductScreen(props) {
     );
   };
   const handleAddToCart = () => {
-    props.history.push('/cart/' + props.match.params.id + '?qty=' + qty);
+    props.history.push("/cart/" + props.match.params.id + "?qty=" + qty);
   };
 
   return (
-    <div>        
-      <Navigation/>
-      <div className="back-to-result">
-        <Link to="/">Back to result</Link>
+    <div>
+      <Navigation />
+      <div>
+        <Link className="back-to-result" href="/#products">Back to result</Link>
       </div>
       {loading ? (
         <div>Loading...</div>
@@ -58,40 +58,40 @@ function ProductScreen(props) {
       ) : (
         <>
           <div className="details">
-            <div className="details-image">
-              <img src={product.image} alt="product"></img>
-            </div>
+            <div className="product-front-and-center">
             <div className="details-info">
-              <ul>
-                <li>
-                  <h4>{product.name}</h4>
-                </li>
-                <li>
-                  <a href="#reviews">
-                    <Rating
-                      value={product.rating}
-                      text={product.numReviews + ' reviews'}
-                    />
-                  </a>
-                </li>
-                <li>
-                  Price: <b>€{product.price}</b>
-                </li>
-                <li>
-                  Description:
-                  <div>{product.description}</div>
-                </li>
-              </ul>
+              <div className="details-image">
+                <img src={product.image} alt="product"></img>
+                <hr/>
+              </div>
+                <ul>
+                  <li>
+                    <h4>{product.name}</h4>
+                  </li>
+                  <li>
+                    <a href="#reviews">
+                      <Rating
+                        value={product.rating}
+                        text={product.numReviews + " reviews"}
+                      />
+                    </a>
+                  </li>
+                  <li>
+                    <div>{product.description ? product.description : null}</div>
+                  </li>
+                </ul>
+              </div>
             </div>
+
             <div className="details-action">
               <ul>
-                <li>Price: {product.price}</li>
+                <li>{product.price ? `Price: €${product.price}` : null}</li>
                 <li>
-                  Status:{' '}
-                  {product.countInStock > 0 ? 'In Stock' : 'Unavailable.'}
+                  Status:{" "}
+                  {product.countInStock > 0 ? "In Stock" : "Unavailable."}
                 </li>
                 <li>
-                  Qty:{' '}
+                  Qty:{" "}
                   <select
                     value={qty}
                     onChange={(e) => {

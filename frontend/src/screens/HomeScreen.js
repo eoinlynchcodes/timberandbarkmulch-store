@@ -231,7 +231,7 @@ function HomeScreen(props) {
                 <img className="imagetocontain" src={yard} />
               </div>
               <div className="forPaddingSections">
-                <ul>
+                <ul className="our-firewood-section">
                   <li>Seasoned for at least two years.</li>
                   <li>
                     Comes from dangerous trees that had to be cut down for
@@ -297,7 +297,7 @@ function HomeScreen(props) {
           </div>
         </section>
       </div>
-      <div className="footer">&copy; timberandbarkmulch.ie</div>
+      <footer className="footer">&copy; timberandbarkmulch.ie</footer>
     </>
   );
 }
