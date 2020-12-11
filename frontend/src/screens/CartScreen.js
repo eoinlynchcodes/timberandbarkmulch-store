@@ -89,6 +89,7 @@ function CartScreen(props) {
           </h3>
           <button
             onClick={checkoutHandler}
+            id="greenButton"
             className="button primary full-width"
             disabled={cartItems.length === 0}
           >

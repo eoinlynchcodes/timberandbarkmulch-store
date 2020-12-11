@@ -15,12 +15,6 @@ import OrderScreen from './screens/OrderScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import OrdersScreen from './screens/OrdersScreen';
 
-// Stripe Implementation
-import {Elements} from '@stripe/react-stripe-js';
-import {loadStripe} from '@stripe/stripe-js';
-
-
-const stripePromise = loadStripe('pk_test_JJ1eMdKN0Hp4UFJ6kWXWO4ix00jtXzq5XG')
 
 function App() {
   const userSignin = useSelector((state) => state.userSignin);
@@ -35,7 +29,6 @@ function App() {
   return (
     <BrowserRouter>
       {/* <div className="grid-container"> */}
-      <Elements stripe={stripePromise} >
       <div>
         <main className="main">
           <div className="content">
@@ -55,7 +48,6 @@ function App() {
           </div>
         </main>
       </div>
-      </Elements>
     </BrowserRouter>
   );
 }

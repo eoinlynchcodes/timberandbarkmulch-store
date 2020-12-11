@@ -24,14 +24,17 @@ function Navigation(props) {
         <ul className="header">
           <div className="navLeftSide">
             <li>
+              <Link to="/">
+                <h2 className="mobilefonth2">timberandbarkmulch.ie</h2>
+              </Link>
+            </li>
+          </div>
+
+          <div>
+            <li>
               <button className="burger-menu" onClick={openMenu}>
                 &#9776;
               </button>
-            </li>
-            <li>
-              <Link to="/">
-                <h2>timberandbarkmulch.ie</h2>
-              </Link>
             </li>
           </div>
 
@@ -61,13 +64,11 @@ function Navigation(props) {
                 <a href="#about">About</a>
               </h4>
             </li>
-
             <li>
               <h4>
                 <a href="#products">Products</a>
               </h4>
             </li>
-
             <li>
               <h4>
                 <a href="#contact">Contact</a>
@@ -87,17 +88,19 @@ function Navigation(props) {
       </header>
 
       <aside className="sidebar">
-        <h3>Shopping Categories</h3>
-        <button className="sidebar-close-button" onClick={closeMenu}>
-          x
-        </button>
+        <h3>Navigation</h3>
+        <h5 className="sidebar-close-button" onClick={closeMenu}>
+          X
+        </h5>
         <ul className="categories">
           <li>
-            <Link to="/">Link One</Link>
+            <h5><a className="whitetext" href="/">Home</a></h5>
           </li>
-
           <li>
-            <Link to="/">Link Two</Link>
+            <h5><a className="whitetext" href="/#products">Products</a></h5>
+          </li>
+          <li>
+            <h5><a className="whitetext" href="/#contact">Contact</a></h5>
           </li>
         </ul>
       </aside>

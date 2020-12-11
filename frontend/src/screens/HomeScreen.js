@@ -10,6 +10,7 @@ import timberstack from "../imagesByEoin/timberstack.jpg";
 import yard from "../imagesByEoin/yard.jpg";
 import stoveburning from "../imagesByEoin/stoveburning.png";
 import firewoodgraphic from "../imagesByEoin/firewoodgraphic.png";
+import Footer from '../components/Footer';
 
 function HomeScreen(props) {
   const [qty, setQty] = useState(1);
@@ -297,7 +298,7 @@ function HomeScreen(props) {
           </div>
         </section>
       </div>
-      <footer className="footer">&copy; timberandbarkmulch.ie</footer>
+      <Footer/>
     </>
   );
 }
