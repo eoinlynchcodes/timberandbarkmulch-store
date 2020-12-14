@@ -115,8 +115,10 @@ ul {
   justify-content: flex-end;
   align-items: center;
   flex-direction: column;
-  height: 20em;
+  text-align: center;
 }
+
+
 a {
   text-decoration: none;
 }
@@ -870,6 +872,12 @@ tbody > tr:nth-child(odd) {
   background-color: green;
 }
 
+
+.background-for-eoin{
+  background-color: #000000;
+  font-family: 'Courier New', Courier, monospace;
+  cursor: pointer;
+}
 
 
 

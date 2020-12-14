@@ -259,7 +259,7 @@ function HomeScreen(props) {
 
         <section className="about-section">
           <div className="forPaddingSections">
-            <h1 id="about">About Us</h1>
+            <h1 id="about">About</h1>
             <section className="grey-border">
               <div>
                 <img src={timberstack} />
@@ -281,7 +281,7 @@ function HomeScreen(props) {
 
         <section className="contact-section">
           <div className="forPaddingSections">
-            <h1 id="contact">Contact</h1>
+            <h1 id="contact">Contact Us</h1>
             <MyForm/>
             {/* <form className="contactForm">
               <label>Name:</label>

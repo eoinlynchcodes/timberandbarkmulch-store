@@ -182,7 +182,7 @@ function ProductScreen(props) {
       )}
       <br/>
       <div>
-        <Link className="back-to-result" href="/#products"><u>Back to result</u></Link>
+        <Link className="back-to-result" to="/#products"><u>Back to result</u></Link>
       </div>
       <br/>
       <Footer/>
