@@ -99,7 +99,9 @@ ul {
   display: none;
 }
 
-.cart-icon-laptop{
+.cart-text{
+  display: flex;
+  flex-direction: row;
 }
 
 .main {
@@ -110,9 +112,10 @@ ul {
   background-color: #333333;
   color: #ffffff;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-end;
   align-items: center;
-
+  flex-direction: column;
+  height: 20em;
 }
 a {
   text-decoration: none;
@@ -866,6 +869,7 @@ tbody > tr:nth-child(odd) {
 #greenButton{
   background-color: green;
 }
+
 
 
 

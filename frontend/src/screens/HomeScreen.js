@@ -11,6 +11,7 @@ import yard from "../imagesByEoin/yard.jpg";
 import stoveburning from "../imagesByEoin/stoveburning.png";
 import firewoodgraphic from "../imagesByEoin/firewoodgraphic.png";
 import Footer from '../components/Footer';
+import MyForm from '../components/MyForm.js';
 
 function HomeScreen(props) {
   const [qty, setQty] = useState(1);
@@ -20,6 +21,12 @@ function HomeScreen(props) {
   const category = props.match.params.id ? props.match.params.id : "";
   const productList = useSelector((state) => state.productList);
   const { products, loading, error } = productList;
+  const [ contactForm, setContactForm ] = useState({
+    name: "",
+    email: "",
+    number: "",
+    message: ""
+  })
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(listProducts(category));
@@ -275,28 +282,37 @@ function HomeScreen(props) {
         <section className="contact-section">
           <div className="forPaddingSections">
             <h1 id="contact">Contact</h1>
-            <form className="contactForm">
+            <MyForm/>
+            {/* <form className="contactForm">
               <label>Name:</label>
-              <input type="text" />
+              <input type="text" 
+              name="name"
+              />
               <br />
 
               <label>Email:</label>
-              <input type="text" />
+              <input type="text"
+              name="email" />
               <br />
 
               <label>Phone Number:</label>
-              <input type="text" />
+              <input type="text" 
+              name="number"
+              />
               <br />
 
               <label>Message:</label>
-              <textarea type="textarea" rows="8" />
+              <textarea type="textarea"
+               name="message"
+               rows="8" />
               <br />
               <input
                 type="submit"
                 className="contact-submit-button"
                 value="Send Message"
               />
-            </form>
+            </form> */}
+
           </div>
         </section>
       </div>

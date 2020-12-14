@@ -84,15 +84,9 @@ function Navigation(props) {
             </li>
             <li>
               <h4>
-                <a href="/cart/:id?">
-                <li className="cart-icon-laptop">
-          <SvgIcon>
-          <ShoppingCartSharpIcon></ShoppingCartSharpIcon>
-          </SvgIcon>
-            </li>{" "}
-                  {cart.cartItems.length ? `(${cart.cartItems.length})` : null}
-                </a>
-              </h4>
+                <a className="cart-text" href="/cart/:id?">
+                Cart {cart.cartItems.length ? `(${cart.cartItems.length})` : null}
+                </a></h4>
             </li>
           </div>
         </ul>
