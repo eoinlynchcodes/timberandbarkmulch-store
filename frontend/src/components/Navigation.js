@@ -3,6 +3,8 @@ import { BrowserRouter, Route, Link } from "react-router-dom";
 import "../App.css";
 import { useSelector } from "react-redux";
 import shoppingcart from "../imagesByEoin/shopping-cart.png";
+import ShoppingCartSharpIcon from '@material-ui/icons/ShoppingCartSharp';
+import SvgIcon from "@material-ui/icons/ShoppingCartSharp";
 
 function Navigation(props) {
   const userSignin = useSelector((state) => state.userSignin);
@@ -22,7 +24,13 @@ function Navigation(props) {
     <div>
       <header>
         <ul className="header">
+        <li className="cart-icon">
+          <SvgIcon>
+          <ShoppingCartSharpIcon></ShoppingCartSharpIcon>
+          </SvgIcon>
+            </li>
           <div className="navLeftSide">
+
             <li>
               <Link to="/">
                 <h2 className="mobilefonth2">timberandbarkmulch.ie</h2>
@@ -74,10 +82,14 @@ function Navigation(props) {
                 <a href="#contact">Contact</a>
               </h4>
             </li>
-            <li className="cart-color-background">
+            <li>
               <h4>
                 <a href="/cart/:id?">
-                  Cart{" "}
+                <li className="cart-icon-laptop">
+          <SvgIcon>
+          <ShoppingCartSharpIcon></ShoppingCartSharpIcon>
+          </SvgIcon>
+            </li>{" "}
                   {cart.cartItems.length ? `(${cart.cartItems.length})` : null}
                 </a>
               </h4>

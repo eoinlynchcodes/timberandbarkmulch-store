@@ -93,13 +93,13 @@ ul {
   padding: 0em 1em;
 }
 
-.shoppingCartIcon img{
-  height: 50%;
+
+
+.cart-icon{
+  display: none;
 }
 
-.cart-color-background{
-  background-color: red;
-  padding: 0em 1em;
+.cart-icon-laptop{
 }
 
 .main {
@@ -140,9 +140,12 @@ a:hover {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  border-radius: 6px;
+  overflow: hidden;
   height: 100%;
   border: .5px double black;
   background-color: white;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
 .product img{
@@ -207,6 +210,7 @@ ul.review {
   width: 40%;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .whitetext{
@@ -622,6 +626,7 @@ tbody > tr:nth-child(odd) {
 
 .firewoodSection img {
   width: 100%;
+  height: auto;
 }
 
 .smallHR{
@@ -725,7 +730,7 @@ tbody > tr:nth-child(odd) {
   flex-direction: column;
   text-align: center;
   justify-content: center;
-  align-content:center;
+  align-content: center;
 }
 
 .inforgraphic-text{
@@ -852,12 +857,17 @@ tbody > tr:nth-child(odd) {
   color: black;
   width: 50%;
   margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 
 
 #greenButton{
   background-color: green;
 }
+
+
 
 
 /* Media Queries from here down */
@@ -907,6 +917,7 @@ tbody > tr:nth-child(odd) {
 
   .header{
     padding: 0em 1em;
+    flex-direction: row-reverse;
   }
 
   .mobilefonth2{
@@ -963,6 +974,63 @@ tbody > tr:nth-child(odd) {
   .categories{
     display: flex;
     flex-direction: column;
+  }
+
+  .inforgraphic{
+    width: 100%;
+  }
+
+  .inside-infographic{
+    width: 100%;
+  }
+
+  .inforgraphic-text{
+    border-top: 1px solid black;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .greenOne{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .greenTwo{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .greenThree{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .forPaddingSections{
+    padding: 0em 0em;
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  .product-padding-section{
+    width: 95%;
+  }
+
+  .cart-icon{
+    display: flex;
+    background-color: red;
+    padding: .5em .5em;
+    border-radius: 50%;
+  }
+
+  .supplytext{
+    height: auto;
+  }
+
+  #supplyID{
+    padding: 0em 0em;
   }
   
 }

@@ -100,8 +100,8 @@ function HomeScreen(props) {
         </li>
       </ul> */}
 
-        <div className="homepageSectionOne">
-          <div className="forPaddingSections">
+        <div className="">
+          <div id="supplyID" className="forPaddingSections">
             <hr className="smallHR" />
             <h2 className="supplytext">
               <i>
@@ -117,6 +117,7 @@ function HomeScreen(props) {
         <section className="products-section">
           <div className="product-padding-section">
             <h1 id="products">Products</h1>
+            <p>More products will be available here soon.</p>
             {loading ? (
               <div>Loading...</div>
             ) : error ? (
@@ -141,9 +142,9 @@ function HomeScreen(props) {
                           {product.name}
                         </Link>
                       </div>
-                      <div className="product-brand pad">
+                      {/* <div className="product-brand pad">
                         {product.weightOrDimensions}
-                      </div>
+                      </div> */}
                       <div className="product-price pad">
                         {" "}
                         {product.price ? `€ ${product.price}` : null}
@@ -155,11 +156,12 @@ function HomeScreen(props) {
                         />
                       </div>
                       <div className="buttonDivHomepageProduct">
-                        <div className="button fifty">More Information</div>
+                        <div className="button primary fifty">More Info</div>
                         {product.countInStock > 0 ? (
                           <div
                             onClick={handleAddToCart}
-                            className="button primary fifty"
+                            id="greenButton"
+                            className="whitetext button fifty"
                           >
                             Add to Cart
                           </div>
@@ -187,7 +189,7 @@ function HomeScreen(props) {
                   <h3>
                     <u>Order Firewood</u>
                   </h3>
-                  <h5>Order, pay and read reviews online</h5>
+                  <h5>Choose your product.</h5>
                 </div>
               </div>
 
