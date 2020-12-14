@@ -21,7 +21,7 @@ function PaypalButton(props) {
     purchase_units: [
       {
         amount: {
-          currency_code: 'USD',
+          currency_code: 'EUR',
           value: props.amount
         }
       }

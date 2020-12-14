@@ -15,6 +15,7 @@ import OrderScreen from './screens/OrderScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import OrdersScreen from './screens/OrdersScreen';
 
+
 function App() {
   const userSignin = useSelector((state) => state.userSignin);
   const { userInfo } = userSignin;
@@ -29,7 +30,6 @@ function App() {
     <BrowserRouter>
       {/* <div className="grid-container"> */}
       <div>
-
         <main className="main">
           <div className="content">
             <Route path="/orders" component={OrdersScreen} />
@@ -47,7 +47,6 @@ function App() {
             <Route path="/" exact={true} component={HomeScreen} />
           </div>
         </main>
-        <footer className="footer">&copy; timberandbarkmulch.ie</footer>
       </div>
     </BrowserRouter>
   );

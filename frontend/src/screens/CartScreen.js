@@ -53,9 +53,8 @@ function CartScreen(props) {
                   </div>
                   <div className="cart-name">
                     <div>
-                      <Link to={"/product/" + item.product}>{item.name}</Link>
+                      <Link to={"/product/" + item.product} className="black-text" >{item.name}</Link>
                     </div>
-                    <div>
                       Qty:
                       <select
                         value={item.qty}
@@ -69,14 +68,13 @@ function CartScreen(props) {
                           </option>
                         ))}
                       </select>
-                      <button
+                      <p
                         type="button"
-                        className="button"
+                        className=""
                         onClick={() => removeFromCartHandler(item.product)}
                       >
-                        Delete
-                      </button>
-                    </div>
+                        <u>Delete</u>
+                      </p>
                   </div>
                   <div className="cart-price">€{item.price}</div>
                 </li>
@@ -91,6 +89,7 @@ function CartScreen(props) {
           </h3>
           <button
             onClick={checkoutHandler}
+            id="greenButton"
             className="button primary full-width"
             disabled={cartItems.length === 0}
           >

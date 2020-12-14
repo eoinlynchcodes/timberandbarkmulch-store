@@ -3,6 +3,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { createOrder, detailsOrder, payOrder } from '../actions/orderActions';
 import PaypalButton from '../components/PaypalButton';
+import Navigation from '../components/Navigation';
+import Footer from '../components/Footer';
+
 function OrderScreen(props) {
 
   const orderPay = useSelector(state => state.orderPay);
@@ -28,7 +31,39 @@ function OrderScreen(props) {
   return loading ? <div>Loading ...</div> : error ? <div>{error}</div> :
 
     <div>
+      <Navigation/>
       <div className="placeorder">
+      <div className="placeorder-action">
+          <ul>
+            <li className="placeorder-actions-payment">
+              {loadingPay && <div>Finishing Payment...</div>}
+              {!order.isPaid &&
+                <PaypalButton
+                  amount={order.totalPrice}
+                  onSuccess={handleSuccessPayment} />
+              }
+            </li>
+            <li>
+              <h3>Order Summary</h3>
+            </li>
+            <li>
+              <div>Items</div>
+              <div>€{order.itemsPrice}</div>
+            </li>
+            {/* <li>
+              <div>Shipping</div>
+              <div>€{order.shippingPrice}</div>
+            </li>
+            <li>
+              <div>Tax</div>
+              <div>€{order.taxPrice}</div>
+            </li> */}
+            <li>
+              <div>Order Total</div>
+              <div>€{order.totalPrice}</div>
+            </li>
+          </ul>
+        </div>
         <div className="placeorder-info">
           <div>
             <h3>
@@ -39,7 +74,7 @@ function OrderScreen(props) {
           {order.shipping.postalCode}, {order.shipping.country},
           </div>
             <div>
-              {order.isDelivered ? "Delivered at " + order.deliveredAt : "Not Delivered."}
+              {order.isDelivered ? "Delivered at " + order.deliveredAt : null}
             </div>
           </div>
           <div>
@@ -48,7 +83,7 @@ function OrderScreen(props) {
               Payment Method: {order.payment.paymentMethod}
             </div>
             <div>
-              {order.isPaid ? "Paid at " + order.paidAt : "Not Paid."}
+              {order.isPaid ? "Paid at " + order.paidAt : null}
             </div>
           </div>
           <div>
@@ -74,7 +109,7 @@ function OrderScreen(props) {
                       </div>
                       <div className="cart-name">
                         <div>
-                          <Link to={"/product/" + item.product}>
+                          <Link to={"/product/" + item.product} className="black-text">
                             {item.name}
                           </Link>
 
@@ -91,45 +126,9 @@ function OrderScreen(props) {
               }
             </ul>
           </div>
-
-
         </div>
-        <div className="placeorder-action">
-          <ul>
-            <li className="placeorder-actions-payment">
-              {loadingPay && <div>Finishing Payment...</div>}
-              {!order.isPaid &&
-                <PaypalButton
-                  amount={order.totalPrice}
-                  onSuccess={handleSuccessPayment} />
-              }
-            </li>
-            <li>
-              <h3>Order Summary</h3>
-            </li>
-            <li>
-              <div>Items</div>
-              <div>€{order.itemsPrice}</div>
-            </li>
-            <li>
-              <div>Shipping</div>
-              <div>€{order.shippingPrice}</div>
-            </li>
-            <li>
-              <div>Tax</div>
-              <div>€{order.taxPrice}</div>
-            </li>
-            <li>
-              <div>Order Total</div>
-              <div>€{order.totalPrice}</div>
-            </li>
-          </ul>
-
-
-
-        </div>
-
       </div>
+      <Footer/>
     </div>
 
 }

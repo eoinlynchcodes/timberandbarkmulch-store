@@ -20,12 +20,33 @@ function Navigation(props) {
 
   return (
     <div>
-      <header className="header">
-        <button className="burger-menu" onClick={openMenu}>&#9776;</button>
-        <Link to="/">
-          <h1>timberandbarkmulch.ie</h1>
-        </Link>
-        {userInfo ? <Link to="/profile">{userInfo.name}</Link> : null}
+      <header>
+        <ul className="header">
+          <div className="navLeftSide">
+            <li>
+              <Link to="/">
+                <h2 className="mobilefonth2">timberandbarkmulch.ie</h2>
+              </Link>
+            </li>
+          </div>
+
+          <div>
+            <li>
+              <button className="burger-menu" onClick={openMenu}>
+                &#9776;
+              </button>
+            </li>
+          </div>
+
+          <div className="navRightSide">
+            <li>
+              {userInfo ? (
+                <Link to="/profile">
+                  <h4>{userInfo.name}</h4>
+                </Link>
+              ) : null}
+            </li>
+            <li>
               {userInfo && userInfo.isAdmin && (
                 <div className="dropdown">
                   <a href="#">Admin</a>
@@ -37,27 +58,49 @@ function Navigation(props) {
                   </ul>
                 </div>
               )}
-        <div className="straightenThis">
-          <h4><a href="#about">About</a></h4>
-          <h4><a href="#products">Products</a></h4>
-          <a href="/cart/:id?">
-            <h4>Cart {cart.cartItems.length ? `(${cart.cartItems.length})` : null}</h4>
-          </a>
-        </div>
+            </li>
+            <li>
+              <h4>
+                <a href="#about">About</a>
+              </h4>
+            </li>
+            <li>
+              <h4>
+                <a href="#products">Products</a>
+              </h4>
+            </li>
+            <li>
+              <h4>
+                <a href="#contact">Contact</a>
+              </h4>
+            </li>
+            <li className="cart-color-background">
+              <h4>
+                <a href="/cart/:id?">
+                  Cart{" "}
+                  {cart.cartItems.length ? `(${cart.cartItems.length})` : null}
+                </a>
+              </h4>
+            </li>
+          </div>
+        </ul>
+        <div className="straightenThis"></div>
       </header>
 
       <aside className="sidebar">
-        <h3>Shopping Categories</h3>
-        <button className="sidebar-close-button" onClick={closeMenu}>
-          x
-        </button>
+        <h3>Navigation</h3>
+        <h5 className="sidebar-close-button" onClick={closeMenu}>
+          X
+        </h5>
         <ul className="categories">
           <li>
-            <Link to="/">Link One</Link>
+            <h5><a className="whitetext" href="/">Home</a></h5>
           </li>
-
           <li>
-            <Link to="/">Link Two</Link>
+            <h5><a className="whitetext" href="/#products">Products</a></h5>
+          </li>
+          <li>
+            <h5><a className="whitetext" href="/#contact">Contact</a></h5>
           </li>
         </ul>
       </aside>
