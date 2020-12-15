@@ -54,8 +54,8 @@ ul {
 
 
 .header {
-  background-color: #333333;
-  color: #ffffff;
+  background-color: green;
+  color: #333333;
   display: flex;
   padding: 0em 2em;
   align-items: center;
@@ -91,6 +91,7 @@ ul {
 
 .navRightSide li{
   padding: 0em 1em;
+  color: #333333;
 }
 
 
@@ -121,9 +122,10 @@ ul {
 
 a {
   text-decoration: none;
+  color: #333333
 }
 a:hover {
-  color: green;
+  color: black;
 }
 
 /* Home Screen */
@@ -248,28 +250,26 @@ a > .rating > span:last-child {
 }
 .sidebar {
   position: fixed;
+  display: none;
   transition: all 0.5s;
   transform: translateX(-30rem);
-  width: 30rem;
+  width: 15rem;
   background-color: #f0f0f0;
   height: 100%;
 }
 .sidebar.open {
   transform: translateX(0);
+  display: flex;
+  flex-direction: column;
 }
 
 .sidebar-close-button {
   border-radius: 50%;
-  border: 0.1rem #000000 solid;
-  width: 3rem;
-  height: 3rem;
-  padding: 0.5rem;
-  font-size: 2rem;
-  padding-top: 0;
+  background-color: red;
   cursor: pointer;
   position: absolute;
   right: 0.5rem;
-  top: 1.5rem;
+  padding: .5em .75em;
 }
 
 /* Product Details */
@@ -352,6 +352,7 @@ a > .rating > span:last-child {
 /* Cart */
 
 .cart {
+  min-height: 40em;
   display: flex;
   flex-wrap: wrap;
   margin: 1rem;
@@ -396,7 +397,8 @@ a > .rating > span:last-child {
   flex: 1 1;
 }
 .cart-name {
-  flex: 8 1;
+  left: 1em;
+  flex: 6 1;
   color: black;
   flex-direction: row;
 }
@@ -803,8 +805,8 @@ tbody > tr:nth-child(odd) {
 .main-text-block{
   display: flex;
   flex-direction: column;
+  margin: 0 auto;
   align-items: flex-start;
-  width: 70%;
 }
 
 .firewoodInfographicDiv img{
@@ -891,6 +893,7 @@ tbody > tr:nth-child(odd) {
 
   .videoAndDescription{
     border: none;
+    margin: 0 auto;
     padding: 0em 0em;
     width: 100%;
     border-radius: 0px;
@@ -898,11 +901,11 @@ tbody > tr:nth-child(odd) {
     align-self: start;
   }
 
-
-  .right66 img{
-    overflow: hidden;
-    height: 100%;
+  .right66{
+    display: none;
   }
+
+  
 
   .details{
     display: flex;
@@ -1020,10 +1023,16 @@ tbody > tr:nth-child(odd) {
   }
 
   .forPaddingSections{
-    padding: 0em 0em;
+    padding: 2.5em 0em;
     width: 95%;
     margin: 0 auto;
   }
+
+  .padText{
+    width: 80%;
+    margin: 0 auto;
+  }
+  
 
   .product-padding-section{
     width: 95%;

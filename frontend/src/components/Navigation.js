@@ -24,11 +24,14 @@ function Navigation(props) {
     <div>
       <header>
         <ul className="header">
+
         <li className="cart-icon">
-          <SvgIcon>
-          <ShoppingCartSharpIcon></ShoppingCartSharpIcon>
-          </SvgIcon>
-            </li>
+          
+          <a className="cart-text" href="/cart/:id?">
+            <SvgIcon>
+              <ShoppingCartSharpIcon></ShoppingCartSharpIcon>
+            </SvgIcon></a>
+            </li>                
           <div className="navLeftSide">
 
             <li>

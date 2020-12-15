@@ -15,7 +15,7 @@ function Footer() {
             <LocationOnIcon /> Mullingar, Westmeath, Ireland.
           </p>
           <p className="background-for-eoin">
-          <a className="whitetext" href="https://eoinlynch.com">Code and design by Eoin Lynch.</a>
+          <a className="whitetext" href="https://eoinlynch.com">Code &amp; design by Eoin Lynch.</a>
           </p>
         </div>
       </div>

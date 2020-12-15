@@ -3,6 +3,7 @@ import { addToCart, removeFromCart } from "../actions/cartActions";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Navigation from "../components/Navigation.js";
+import Footer from '../components/Footer.js';
 
 function CartScreen(props) {
   const cart = useSelector((state) => state.cart);
@@ -97,6 +98,7 @@ function CartScreen(props) {
           </button>
         </div>
       </div>
+      <Footer/>
     </section>
   );
 }

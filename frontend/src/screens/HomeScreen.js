@@ -57,15 +57,15 @@ function HomeScreen(props) {
           <div className="textToSquare">
             <div className="main-text-block">
               <h1>Firewood Delivered.</h1>
-              <p className="">
+              <h5 className="">
                 Order online and get firewood delivered in Westmeath.
                 <br /> Seasoned and dried by air or kiln.
-              </p>
-            </div>
+              </h5>
+            
 
-            <div className="firewoodInfographicDiv">
-              <img src={firewoodgraphic} />
-            </div>
+            {/* <div className="image-for-mobile">
+              <img src={} />
+            </div> */}
             <div className="flexThisEvenly">
               <a className="" href="#products">
                 <p className="orderNowButton">Order Now</p>
@@ -73,7 +73,8 @@ function HomeScreen(props) {
               <a className="" href="#products">
                 <p className="seeProductButton"><u>See Products</u></p>
               </a>
-            </div>          
+            </div> 
+            </div>         
           </div>
         </div>
 
@@ -110,12 +111,12 @@ function HomeScreen(props) {
         <div className="">
           <div id="supplyID" className="forPaddingSections">
             <hr className="smallHR" />
-            <h2 className="supplytext">
+            <h3 className="supplytext">
               <i>
-                40 years of supplying firewood, timber products and tree
+                Over 40 years of supplying firewood, timber products and tree
                 services.
               </i>
-            </h2>
+            </h3>
             <hr className="smallHR" />
           </div>
         </div>
@@ -133,6 +134,7 @@ function HomeScreen(props) {
               <ul className="products">
                 {products.map((product) => (
                   <li key={product._id}>
+                    {product ?
                     <div className="product">
                       <Link to={"/product/" + product._id}>
                         <img
@@ -176,7 +178,8 @@ function HomeScreen(props) {
                           <div className="button primary"><a href="#contact" className="whitetext">Email Us For Orders</a></div>
                         )}
                       </div>
-                    </div>
+                    </div> : <div><h2>Products will soon be available for purchase here.</h2></div>
+                }
                   </li>
                 ))}
               </ul>
@@ -241,7 +244,7 @@ function HomeScreen(props) {
                 <img className="imagetocontain" src={yard} />
               </div>
               <div className="forPaddingSections">
-                <ul className="our-firewood-section">
+                <ul className="our-firewood-section padText">
                   <li>Seasoned for at least two years.</li>
                   <li>
                     Comes from dangerous trees that had to be cut down for
@@ -265,7 +268,7 @@ function HomeScreen(props) {
                 <img src={timberstack} />
               </div>
               <div className="forPaddingSections">                
-                <p>
+                <p className="padText">
                   Mick Lynch &amp; Son Tree Surgery have been felling dangerous
                   trees and selling firewood since 1978. In response to an
                   increasing demand for timber based products in the midlands,
