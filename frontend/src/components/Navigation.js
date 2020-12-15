@@ -56,14 +56,9 @@ function Navigation(props) {
             </li>
             <li>
               {userInfo && userInfo.isAdmin && (
-                <div className="dropdown">
-                  <a href="#">Admin</a>
-                  <ul className="dropdown-content">
-                    <li>
-                      <Link to="/orders">Orders</Link>
-                      <Link to="/products">Products</Link>
-                    </li>
-                  </ul>
+                <div className="flexThisEvenly">
+                  <Link to="/orders"><h4>Orders</h4></Link>
+                  <Link to="/products"><h4>Products</h4></Link>
                 </div>
               )}
             </li>

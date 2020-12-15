@@ -267,7 +267,7 @@ function HomeScreen(props) {
               <div className="forPaddingSections">                
                 <p>
                   Mick Lynch &amp; Son Tree Surgery have been felling dangerous
-                  trees and selling firewood since 19XX. In response to an
+                  trees and selling firewood since 1978. In response to an
                   increasing demand for timber based products in the midlands,
                   John Lynch decided to setup timberandmulch.ie and the
                   necessary infrastructure to process and sell firewood, bark
