@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
-import { listProducts } from "../actions/productActions";
+import { listProducts, detailsProduct } from "../actions/productActions";
 import Rating from "../components/Rating";
 import firewoodstack from "../imagesByEoin/firewoodstack.jpeg";
 import Navigation from "../components/Navigation";
@@ -15,6 +15,9 @@ import MyForm from '../components/MyForm.js';
 
 function HomeScreen(props) {
   const [qty, setQty] = useState(1);
+  const userSignin = useSelector((state) => state.userSignin);
+  const { userInfo } = userSignin;
+  const productDetails = useSelector((state) => state.productDetails);
 
   const [searchKeyword, setSearchKeyword] = useState("");
   const [sortOrder, setSortOrder] = useState("");
@@ -28,13 +31,16 @@ function HomeScreen(props) {
     message: ""
   })
   const dispatch = useDispatch();
+  
+
   useEffect(() => {
     dispatch(listProducts(category));
-
+    dispatch(detailsProduct(props.match.params.id));
     return () => {
       //
     };
   }, [category]);
+
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -45,8 +51,10 @@ function HomeScreen(props) {
     dispatch(listProducts(category, searchKeyword, sortOrder));
   };
 
-  const handleAddToCart = () => {
-    props.history.push("/cart/" + props.match.params.id + "?qty=" + 1);
+  const handleAddToCart = (product) => {
+    debugger
+    console.log(product);
+    props.history.push("/cart/" + product._id + "?qty=" + 1);
   };
 
   return (
@@ -168,7 +176,7 @@ function HomeScreen(props) {
                         <div className="button primary fifty">More Info</div>
                         {product.countInStock > 0 ? (
                           <div
-                            onClick={handleAddToCart}
+                            onClick={(product) => handleAddToCart(product)}
                             id="greenButton"
                             className="whitetext button fifty"
                           >

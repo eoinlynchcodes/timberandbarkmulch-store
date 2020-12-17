@@ -31,6 +31,7 @@ function ProductScreen(props) {
       //
     };
   }, [productSaveSuccess]);
+  
   const submitHandler = (e) => {
     e.preventDefault();
     // dispatch actions
