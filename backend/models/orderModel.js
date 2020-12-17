@@ -5,6 +5,7 @@ const shippingSchema = {
   city: { type: String, required: true },
   postalCode: { type: String, required: true },
   country: { type: String, required: true },
+  instructions: {type: String, required: true },
 };
 
 const paymentSchema = {

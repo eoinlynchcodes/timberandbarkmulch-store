@@ -25,7 +25,7 @@ function ShippingScreen(props) {
   const submitHandler = (e) => {
     e.preventDefault();
     dispatch(saveShipping({ address, city, postalCode, country, instructions }));
-    dispatch(savePayment({ paymentMethod }));
+    dispatch(savePayment({ paymentMethod: 'paypal' }));
     props.history.push('placeorder');
   }
   return <div>
@@ -33,7 +33,7 @@ function ShippingScreen(props) {
     <CheckoutSteps step1 step2 ></CheckoutSteps>
     <div className="form">
       <form onSubmit={submitHandler} >
-      <ul className="form-container">
+      {/* <ul className="form-container">
             <li>
               <h2>Payment</h2>
             </li>
@@ -50,7 +50,7 @@ function ShippingScreen(props) {
                 <label for="paymentMethod">Paypal</label>
               </div>
             </li>
-          </ul>
+          </ul> */}
 
         <ul className="form-container">
           <li>
